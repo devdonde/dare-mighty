@@ -20,6 +20,9 @@
     text-decoration: none;
   }
   
+  .site-header input {
+    min-width: 50%;
+  }
   /*
    * Dummy devices (replace them with your own or something else entirely!)
    */
