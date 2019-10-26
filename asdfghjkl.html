@@ -1,0 +1,269 @@
+https://res.cloudinary.com/idemo/image/upload/pdqtwip51sylcrtnoups.jpg
+https://res.cloudinary.com/idemo/image/upload/donhk3bc9pcojonwzm0e.jpg
+https://res.cloudinary.com/idemo/image/upload/yfcakkodokkgvegw5m1w.jpg
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Prosper Otemuyiwa - Developer Advocate & Minister of Fire</title>
+<style type="text/css">
+  table{
+    table-layout: fixed;
+  }
+
+ .art-img:hover  {
+   border: solid 6px #7bb9b9;
+   border-radius: 6px;
+   cursor: pointer;
+  opacity: 1;
+
+ }
+ .art-img {
+   border: solid 6px white;
+   border-radius: 6px;
+   opacity: 0.5;
+
+ }
+ .art-img.active {
+   border: solid 6px #026a6a;
+   border-radius: 6px;
+  opacity: 1;
+
+ }
+ .photo-img:hover  {
+   border: solid 6px #7bb9b9;
+   border-radius: 6px;
+   cursor: pointer;
+  opacity: 1;
+
+ }
+ .photo-img {
+   border: solid 6px #aaa;
+   border-radius: 6px;
+  opacity: 0.5;
+
+ }
+ .photo-img.active {
+   border: solid 6px #026a6a;
+   border-radius: 6px;
+  opacity: 1;
+
+ }
+
+.apply-button:hover  {
+   cursor: pointer;
+ }
+</style>
+<script src="//widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+</head>
+<body>
+  <table border="5" bordercolor="#026a6a">
+  <tr valign="top">
+  <td rowspan="2" style="border-style: solid; border-width: 5px;" >
+
+  <table border = "0" >
+   <col width="200">
+  <tr>
+  <td  style = "width:200px;text-align: center; padding: 10px;font-size:90%;"><img src="http://cloudinary-res.cloudinary.com/image/upload/w_25/step1-circle.png" style="float:left; vertical-align: middle; margin: 10px;margin-bottom:30px;" />Pick a source artwork:</td>
+  </tr>
+  <tr style="margin-top: 20;" >
+  <td align="center">
+  <span style="display:inline-block;">
+  <img align="middle" id="art1" data-url-choice="art1" data-url-image="sailing_angel" class="art-img" width=100 height=100 src="http://res.cloudinary.com/demo/image/upload/w_100,h_100,c_fill,dpr_2.0/sailing_angel.jpg" style=" margin-bottom: 40px; display:block;"/>
+  </span>
+  </td>
+  </tr>
+  <tr>
+  <td align="center">
+  <span style="display:inline-block;">
+  <img align="middle" id="art2" data-url-choice="art2" data-url-image="lighthouse" class="art-img" width=100 height=100 src="http://res.cloudinary.com/demo/image/upload/w_100,h_100,c_fill,dpr_2.0/lighthouse.jpg" style=" margin-bottom: 40px; display:block;" />
+  </span>
+  </td>
+  </tr>
+  <tr>
+  <td align="center">
+  <span style="display:inline-block;">
+  <img align="middle" id="art3" data-url-choice="art3" data-url-image="davinci_mona_lisa" class="art-img" width=100 height=100 src="http://res.cloudinary.com/demo/image/upload/w_100,h_100,c_fill,dpr_2.0,g_face/davinci_mona_lisa.jpg" style=" margin-bottom: 40px; display:block;" />
+  </span>
+  </td>
+  </tr>
+  <tr>
+  <td align="center">
+  <span style="display:inline-block;">
+  <img align="middle" id="art4" data-url-choice="art4" data-url-image="watercolor" class="art-img" width=100 height=100 src="http://res.cloudinary.com/demo/image/upload/w_100,h_100,c_fill,dpr_2.0/watercolor.jpg" style=" margin-bottom: 60px; display:block;" />
+  </span>
+  </td>
+  </tr>
+  </table>
+  </td>
+  <td  style="border-style: solid; border-width: 5px;padding: 10px;padding-top: 20px; padding-left:20;font-size:90%">
+  <img src="http://cloudinary-res.cloudinary.com/image/upload/w_25/step2-circle.png" style=margin: 10px; vertical-align: middle; " />&nbsp;&nbsp;Pick a target photo:<span style="float:right;">Or pick your own:&nbsp;&nbsp;&nbsp;<a href="#" id="upload_widget_opener"><img src="http://res.cloudinary.com/demo/image/upload/upload_btn.png" style=margin: 10px; vertical-align: middle; ” /></a></span>
+
+  <div style="clear: both; margin-bottom: 30px">
+  </div>
+  <div style="text-align:center;padding-top: 5px;">
+
+  <span style="display:inline-block;vertical-align:top;">
+  <img  id="photo1" data-url-choice="photo1" data-url-image="golf_sand_st" class="photo-img" width=100 height=100 src="http://res.cloudinary.com/demo/image/upload/w_100,h_100,c_fill,dpr_2.0/golf_sand.jpg" alt="golf course target photo" title="golf course target photo" style="margin-right:0px;margin-left: 0px;display:block;" /></a>
+  </span>
+
+  <span style="display:inline-block;vertical-align:top;">
+  <img id="photo2" data-url-choice="photo2" data-url-image="coffee_cup_st" class="photo-img" width=100 height=100 src="http://res.cloudinary.com/demo/image/upload/w_100,h_100,c_fill,dpr_2.0/coffee_cup.jpg" alt="coffee target photo" title="coffee target photo" style="margin-right:0px;display:block;" /></a>
+  </span>
+
+  <span style="display:inline-block;vertical-align:top;">
+  <img id="photo3" data-url-choice="photo3" data-url-image="oldman_village_st" class="photo-img" width=100 height=100 src="http://res.cloudinary.com/demo/image/upload/w_100,h_100,c_fill,dpr_2.0,g_face/oldman_village.jpg" alt="old man target photo" title="old man target photo" style="margin-right:0px;display:block;" /></a>
+  </span>
+
+  <span style="display:inline-block;vertical-align:top;">
+  <img id="photo4" data-url-choice="photo4" data-url-image="custom" class="photo-img" width=100 height=100 src="http://res.cloudinary.com/demo/image/upload/w_100,h_100,c_fill/1_pixel_gray.png" alt="custom target photo" title="custom target photo" style="margin-right:0px;display:block;" /></a>
+  </span>
+
+  </div>
+  <div style="clear: both; margin-bottom: 20px">
+  </div>
+
+  </td>
+  </tr >
+  <tr valign="top">
+  <td  style="border-style: solid; border-width: 5px;padding: 10px; font-size:90%"><img src="http://cloudinary-res.cloudinary.com/image/upload/w_25/step3-circle.png" style=margin: 10px; vertical-align: middle; " />&nbsp;&nbsp;Press the magic button!
+
+  <div style="text-align:center">
+  <span class="apply-button" id="neural_apply">
+  <img  style="margin-bottom: 20px;" src="http://res.cloudinary.com/demo/image/upload/w_0.75/merge_btn.png" >
+  </span>
+
+  <div>
+  <span style="display:inline-block;vertical-align:top;">
+  <a id="imagelink" href="http://res.cloudinary.com/demo/image/upload/art_here.jpg" target ="_blank" data-url-template3="http://res.cloudinary.com/demo/image/upload/l_text:Arial_80:Buckets,e_style_transfer,l_#art_image#/#use-img#.jpg">
+  <img id="testpic" src="http://res.cloudinary.com/demo/image/upload/w_550,h_300,c_fit/art_here.jpg" alt="your generated neural art" title="your generated neural art"  data-url-template="http://res.cloudinary.com/demo/image/upload/e_style_transfer,l_#art_image#/#use-img#.jpg" />
+  </a>
+  <div align="center" class="div_url" style="font-size: 60%;">
+   <a id="cloudurl" href="http://res.cloudinary.com/demo/image/upload/art_here.jpg" target="_blank" data-url-templated="http://res.cloudinary.com/demo/image/upload/l_text:Arial_80:Buckets,e_style_transfer,l_#art_image#/#use-img#.jpg"><span id="c-url">http://res.cloudinary.com/demo/image/upload/art_here.jpg</span></a>
+  <p>
+  </div>
+  </div>
+  </div></td>
+  </tr>
+  </table>
+</body>
+</html>
+<script type="text/javascript">
+var A = "custom";
+var B;
+
+
+function updateResult(result) {
+    var $display = "http://res.cloudinary.com/demo/image/upload/e_style_transfer,l_#art_image#/#use-img#.jpg"
+    var $urldisplay = "http://res.cloudinary.com/demo/image/upload/e_style_transfer,l_#art_image#/#use-img#.jpg"
+    var $linkdisplay = "http://res.cloudinary.com/demo/image/upload/e_style_transfer,l_#art_image#/#use-img#.jpg"
+    var $userpic = "http://res.cloudinary.com/demo/image/upload/w_100,h_100,c_pad,dpr_2.0/#upic#.jpg"
+
+    var $imglink = $('#imagelink');
+    var $img = $('#testpic');
+    var widget_id = result["public_id"];
+    A =   widget_id;
+    if (!B) {
+      B = "sailing_angel";
+      $('#art1').addClass('active');
+    }
+
+    var newUrl = $display.replace('#use-img#', A).replace('#art_image#', B);
+    var newUrl2 = $urldisplay.replace('#use-img#', A).replace('#art_image#', B);
+    var newUrl3 = $linkdisplay.replace('#use-img#', A).replace('#art_image#', B);
+
+     var newUserUrl = $userpic.replace('#upic#', A);
+
+
+    var $ccloudurl = $('#cloudurl');
+    document.getElementById("c-url").textContent=newUrl2;
+    $img.attr('src', newUrl);
+    $ccloudurl.attr('href', newUrl2);
+    $imglink.attr('href', newUrl3);
+   $('#photo4').attr('src', newUserUrl).data('url-image', widget_id);
+
+     $('.photo-img').removeClass('active');
+     $('#photo4').addClass('active');
+  };
+
+  document.getElementById("upload_widget_opener").addEventListener("click", function(e) {
+     e.preventDefault();
+    cloudinary.openUploadWidget({ cloud_name: 'demo', upload_preset: 'st_blog',
+    sources: ['local','url','camera','dropbox', 'image_search','google_photos', 'facebook'], google_api_key: 'AIzaSyDaQj7FO1IQtp9DSB5YNP5jjG6f_mItEQ4'},
+      function(error, result) { console.log(result[0].public_id);  console.log(error, result); updateResult(result[0]) });
+  }, false);
+</script>
+<script>
+ //<![CDATA[
+ function insertScript(src, callback) {
+  var script = document.createElement('script');
+  script.onload = callback;
+  script.type = 'text/javascript';
+  script.async = true;
+  script.src = src;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(script, s);
+ }
+
+ insertScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js', function(){
+
+  $('.apply-button').click(function(){
+
+
+    var $display = "http://res.cloudinary.com/demo/image/upload/e_style_transfer,l_#art_image#/#use-img#.jpg"
+    var $urldisplay = "http://res.cloudinary.com/demo/image/upload/e_style_transfer,l_#art_image#/#use-img#.jpg"
+    var $linkdisplay = "http://res.cloudinary.com/demo/image/upload/e_style_transfer,l_#art_image#/#use-img#.jpg"
+
+    var $imglink = $('#imagelink');
+    var $img = $('#testpic');
+
+    if (A == "custom") {
+      return;
+    }
+
+    if (!A) {
+      A = "art-here"
+    }
+    if (!B) {
+      B = "sailing_angel"
+    }
+
+    var newUrl = $display.replace('#use-img#', A).replace('#art_image#', B);
+    var newUrl2 = $urldisplay.replace('#use-img#', A).replace('#art_image#', B);
+    var newUrl3 = $linkdisplay.replace('#use-img#', A).replace('#art_image#', B);
+
+
+    var $ccloudurl = $('#cloudurl');
+    document.getElementById("c-url").textContent=newUrl2;
+    $img.attr('src', newUrl);
+    $ccloudurl.attr('href', newUrl2);
+    $imglink.attr('href', newUrl3);
+
+  });
+
+  $('.photo-img').click(function(){
+
+    var $sender = $(this);
+    A =  $sender.data('url-image');
+     $('.photo-img').removeClass('active');
+   $sender.addClass('active');
+
+
+  });
+
+  $('.art-img').click(function(){
+
+    var $sender = $(this);
+    B =  $sender.data('url-image');
+     $('.art-img').removeClass('active');
+   $sender.addClass('active');
+
+  });
+
+ });
+ //]]>
+</script>
