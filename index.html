@@ -71,8 +71,9 @@ http://www.templatemo.com/tm-416-xenon
 <script>
 $(document).ready(function(){
     $("form").submit(function(){
-        alert("Submitted");
-        console.log($(Address))
+        var $underscored=$Address.replace(/ /g,"_");
+        alert($(underscored));
+        // console.log($(Address));
     });
 });
 </script>
@@ -339,7 +340,7 @@ function updateResult(result) {
 </script>
 
     <!--ik this shouldn't go here but whoops 2.4-->
-    <script>
+    <!-- <script>
             var input = document.getElementById("Address");
             input.addEventListener("keyup", function(event) {
               if (event.keyCode === 13) {
@@ -372,7 +373,7 @@ function updateResult(result) {
                     });
                 map.setStreetView(panorama);
               }
-            </script>
+            </script> -->
         
           <script async defer
           src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2bd3qlr8st5twYYuG2Xj1yer4cSQzYFw&callback=initialize"></script>
