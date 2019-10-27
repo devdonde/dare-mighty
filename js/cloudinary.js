@@ -1,82 +1,42 @@
 let resultContainer, textField;
 
-document.addEventListener('DOMContentLoaded', () => {
-  resultContainer = document.getElementById('search-result');
-  textField = document.getElementById('textfield');
-  addItems(data.A);
-  addItems(data.B);
-  addItems(data.C);
-  addItems(data.D);
+// document.addEventListener('DOMContentLoaded', () => {
+//   resultContainer = document.getElementById('search-result');
+//   textField = document.getElementById('textfield');
+//   addItems(data.A);
+//   addItems(data.B);
+//   addItems(data.C);
+//   addItems(data.D);
   
-  textField.addEventListener('change', () => {
-    setTimeout(update(), 100);
-  });
-});
+//   textField.addEventListener('change', () => {
+//     setTimeout(update(), 100);
+//   });
+// });
 
-// Runs when updating search
-const update = () => {
-  let value = textField.value.toLowerCase;
-  let underscored = textField.value.replace(/ /g,"_");
-  let exp = new RegExp(textField.value.toLowerCase());
-  let dataSet;
-  document.getElementById("property_name").innerHTML = String(textField.value);
-  document.getElementById("property_address").innerHTML = JSON.stringify(data.D);
-  document.getElementById("property_narrative").innerHTML = JSON.stringify(data.C);
-  
-  // if (value === "") {
-    // Add all objects to dataSet
-    // dataSet = data.D;
-  // } else {
-    // Filter out objects that matches search query
-    // dataSet = data.D.filter(b => {
-      // return (
-        // exp.test(b.A.toLowerCase()) || 
-        // exp.test(b.B.toLowerCase()) || 
-        // exp.test(b.C) ||
-        // exp.test(b.D.toLowerCase())
-      // );
-    // });
-  // }
-  // Remove previous results and add the new ones
-  // resultContainer.innerHTML = "";
-  // addItems(dataSet);
+function getPropertyByAddress(address) {
+  let address = textField.value.toLowerCase;
+  return data.filter(
+    function(data){ 
+      return data.property == property 
+    }
+  );
 }
 
+var found = getPropertyByAddress('DZ');
+document.getElementById("property_name").innerHTML = found[0].name;
+// document.getElementById("property_name").innerHTML = String(textField.value);
+// document.getElementById("property_address").innerHTML = JSON.stringify(data.D);
+// document.getElementById("property_narrative").innerHTML = JSON.stringify(data.C);
 
-// const addItems = data => {
-//   let container = document.createElement('div');
-//   container.classList.add('list-item');
-  // Creates column headers
-  // createTextElement('div', 'A', container);
-  // createTextElement('div', 'B', container);
-  // createTextElement('div', 'C', container);
-  // createTextElement('div', '', container); //Column header
-  // resultContainer.appendChild(container);
-  // Loops through the provided objects
-  // for (let i = 0; i < data.length; i++) {
-  //   let container = document.createElement('div');
-  //   container.classList.add('list-item');
-    // Adds values for every row
-    // createTextElement('div', data[i].A, container);
-    // createTextElement('div', data[i].B, container);
-    // createTextElement('div', data[i].C + ' kr', container);
-    // createTextElement('div', data[i].D, container);
-    // resultContainer.appendChild(container);
-  // }
-// }
 
-// Function to create, and append, elements containing text
-// const createTextElement = (elem, text, appendTo) => {
-//   let container = document.createElement(elem);
-//   let textNode = document.createTextNode(text);
-//   container.appendChild(textNode);
-//   appendTo.appendChild(container);
-// }
+// Runs when updating search
+// const update = () => {
+//   let value = textField.value.toLowerCase;
+//   let underscored = textField.value.replace(/ /g,"_");
+//   let exp = new RegExp(textField.value.toLowerCase());
+//   let dataSet;
 
-// const data = require('./propertycsv.json');
-// List of books
-const data = {
-  D: [
+var data = [
     {
       "A": "PropertyID",
       "B": "Property Type",
@@ -3593,5 +3553,4 @@ const data = {
       "C": "Office",
       "D": "Willow Rd @ I-294"
     }
-   ]
-};
+   ];
