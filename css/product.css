@@ -82,3 +82,8 @@
   }
   
   .overflow-hidden { overflow: hidden; }
+
+
+  .apply-button:hover  {
+    cursor: pointer;
+  }
