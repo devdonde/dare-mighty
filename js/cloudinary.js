@@ -1,5 +1,4 @@
 let resultContainer, textField;
-var data = require('./propertycsv.json');
 
 document.addEventListener('DOMContentLoaded', () => {
   resultContainer = document.getElementById('search-result');
@@ -62,6 +61,7 @@ const createTextElement = (elem, text, appendTo) => {
   appendTo.appendChild(container);
 }
 
+const data = require('./propertycsv.json');
 // List of books
 // const data = {
 //   books: [
