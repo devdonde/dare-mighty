@@ -58,8 +58,8 @@ const update = () => {
     // createTextElement('div', data[i].C + ' kr', container);
     // createTextElement('div', data[i].D, container);
     // resultContainer.appendChild(container);
-  }
-}
+  // }
+// }
 
 // Function to create, and append, elements containing text
 // const createTextElement = (elem, text, appendTo) => {
