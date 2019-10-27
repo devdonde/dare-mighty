@@ -1,13 +1,5 @@
 let resultContainer, textField;
 
-document.addEventListener('DOMContentLoaded', () => {
-  resultContainer = document.getElementById('search-result');
-  textField = document.getElementById('textfield');
-  textField.addEventListener('change', () => {
-    setTimeout(update(), 100);
-  });
-});
-
 function getPropertyByAddress(D) {
   return data.filter(
     function(data) {
@@ -19,6 +11,14 @@ function getPropertyByAddress(D) {
 var found = getPropertyByAddress('1 Astellas Way');
 
 document.getElementById('output').innerHTML = found[0].name;
+
+document.addEventListener('DOMContentLoaded', () => {
+  resultContainer = document.getElementById('search-result');
+  textField = document.getElementById('textfield');
+  textField.addEventListener('change', () => {
+    setTimeout(update(), 100);
+  });
+});
 
 // Runs when updating search
 const update = () => {
