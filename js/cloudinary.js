@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Runs when uppdating search
+// Runs when updating search
 const update = () => {
   let value = textField.value.toLowerCase;
   let exp = new RegExp(textField.value.toLowerCase());
@@ -30,39 +30,39 @@ const update = () => {
     });
   }
   // Remove previous results and add the new ones
-  resultContainer.innerHTML = "";
-  addItems(dataSet);
+  // resultContainer.innerHTML = "";
+  // addItems(dataSet);
 }
 
-const addItems = data => {
-  let container = document.createElement('div');
-  container.classList.add('list-item');
+// const addItems = data => {
+//   let container = document.createElement('div');
+//   container.classList.add('list-item');
   // Creates column headers
   // createTextElement('div', 'A', container);
   // createTextElement('div', 'B', container);
   // createTextElement('div', 'C', container);
-  createTextElement('div', '', container); //Column header
-  resultContainer.appendChild(container);
+  // createTextElement('div', '', container); //Column header
+  // resultContainer.appendChild(container);
   // Loops through the provided objects
-  for (let i = 0; i < data.length; i++) {
-    let container = document.createElement('div');
-    container.classList.add('list-item');
+  // for (let i = 0; i < data.length; i++) {
+  //   let container = document.createElement('div');
+  //   container.classList.add('list-item');
     // Adds values for every row
     // createTextElement('div', data[i].A, container);
     // createTextElement('div', data[i].B, container);
     // createTextElement('div', data[i].C + ' kr', container);
-    createTextElement('div', data[i].D, container);
-    resultContainer.appendChild(container);
+    // createTextElement('div', data[i].D, container);
+    // resultContainer.appendChild(container);
   }
 }
 
 // Function to create, and append, elements containing text
-const createTextElement = (elem, text, appendTo) => {
-  let container = document.createElement(elem);
-  let textNode = document.createTextNode(text);
-  container.appendChild(textNode);
-  appendTo.appendChild(container);
-}
+// const createTextElement = (elem, text, appendTo) => {
+//   let container = document.createElement(elem);
+//   let textNode = document.createTextNode(text);
+//   container.appendChild(textNode);
+//   appendTo.appendChild(container);
+// }
 
 // const data = require('./propertycsv.json');
 // List of books
