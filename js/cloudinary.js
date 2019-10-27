@@ -24,8 +24,6 @@ const update = () => {
   var $newMapsUrl = $mapsUrl.replace('#underscored#', underscored);
   console.log($newMapsUrl);
   document.getElementById("testpic").setAttribute("src", String($newMapsUrl));
-  // document.getElementById("testpic").innerHTML = String($newMapsUrl);
-  // document.getElementById("testpic").innerHTML = String($newMapsUrl);
 }
 
 var data = [
