@@ -339,43 +339,6 @@ function updateResult(result) {
  });
  //]]>
 </script>
-
-    <!--ik this shouldn't go here but whoops 2.4-->
-    <!-- <script>
-            var input = document.getElementById("Address");
-            input.addEventListener("keyup", function(event) {
-              if (event.keyCode === 13) {
-               event.preventDefault();
-               addressFunction()
-              }
-            });
-            </script>
-          <script>
-            function addressFunction() {
-              var x = document.getElementByName("Address").value;
-              document.getElementById("property").innerHTML = x;
-            }
-            </script>
-            <script>
-      
-              function initialize() {
-                var address = {lat: 42.345573, lng: -71.098326};
-                var map = new google.maps.Map(document.getElementById('map'), {
-                center: address,
-                zoom: 14
-              });
-                var panorama = new google.maps.StreetViewPanorama(
-                    document.getElementById('pano'), {
-                      position: address,
-                      pov: {
-                        heading: 34,
-                        pitch: 10
-                      }
-                    });
-                map.setStreetView(panorama);
-              }
-            </script> -->
-        
           <script async defer
           src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2bd3qlr8st5twYYuG2Xj1yer4cSQzYFw&callback=initialize"></script>
           <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>

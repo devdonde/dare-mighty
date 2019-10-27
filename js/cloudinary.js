@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Runs when updating search
 const update = () => {
   let value = textField.value.toLowerCase;
-  let underscored = textField.value.replace(/ /g,"_");
+  
   let exp = new RegExp(textField.value.toLowerCase());
   let dataSet;
   // Update the placeholders
@@ -19,7 +19,10 @@ const update = () => {
   document.getElementById("property_address").innerHTML = JSON.stringify(data.D);
   document.getElementById("property_narrative").innerHTML = JSON.stringify(data.C);
   // Create Google Map API search string
-  console.log(String(textField.value));
+  let underscored = String(textField.value).replace(/ /g,"_");
+  var $mapsUrl = "https://maps.googleapis.com/maps/api/streetview?location=#underscored#&size=900x300&key=AIzaSyC2bd3qlr8st5twYYuG2Xj1yer4cSQzYFw"
+  var newMapsUrl = $mapsUrl.replace('#underscored#', underscored);
+  console.log($newMapsUrl);
 }
 
 var data = [
