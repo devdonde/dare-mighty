@@ -145,14 +145,14 @@ http://www.templatemo.com/tm-416-xenon
     <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
       <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
         <div class="my-3 p-3">
-          <h2 class="display-5">Another headline</h2>
-          <p class="lead">And an even wittier subheading.</p>
+          <h2 class="display-5">We could put more information here!</h2>
+          <p class="lead">we sure could.</p>
         </div>
       </div>
       <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
         <div class="my-3 py-3">
-          <h2 class="display-5">Another headline</h2>
-          <p class="lead">And an even wittier subheading.</p>
+          <h2 class="display-5">And here! Perhaps a facebook widget.</h2>
+          <p class="lead">And then more information.</p>
         </div>
       </div>
     </div>
@@ -213,16 +213,17 @@ function updateResult(result) {
     var $img = $('#testpic');
     var widget_id = result["public_id"];
 
-    // Create Google Map API search string
-    var value = document.getElementById(textfield).textField.value.toLowerCase();
-    var underscored = String(document.getElementById(textfield).textField.value).replace(/ /g,"_");
-    var $mapsUrl = "https://maps.googleapis.com/maps/api/streetview?location=#underscored#&size=900x300&key=AIzaSyC2bd3qlr8st5twYYuG2Xj1yer4cSQzYFw"
-    var $newMapsUrl = $mapsUrl.replace('#underscored#', underscored);
-    console.log($newMapsUrl);
+    // // Create Google Map API search string
+    // var value = document.getElementById(textfield).textField.value.toLowerCase();
+    // var underscored = String(document.getElementById(textfield).textField.value).replace(/ /g,"_");
+    // var $mapsUrl = "https://maps.googleapis.com/maps/api/streetview?location=#underscored#&size=900x300&key=AIzaSyC2bd3qlr8st5twYYuG2Xj1yer4cSQzYFw"
+    // var $newMapsUrl = $mapsUrl.replace('#underscored#', underscored);
+    // console.log($newMapsUrl);
 
     A =   widget_id;
     if (!B) {
-      B = String($newMapsUrl);
+    //   B = String($newMapsUrl);
+        B = 'jmss9xhzpc90mdfu0tas';
       $('#art1').addClass('active');
     }
 
@@ -284,7 +285,8 @@ function updateResult(result) {
       A = "art-here"
     }
     if (!B) {
-      B = String($newMapsUrl)
+    //   B = String($newMapsUrl)
+        B = 'jmss9xhzpc90mdfu0tas'
     }
 
     var newUrl = $display.replace('#use-img#', A).replace('#art_image#', B);
