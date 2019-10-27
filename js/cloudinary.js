@@ -20,14 +20,7 @@ const update = () => {
   let exp = new RegExp(textField.value.toLowerCase());
   let dataSet;
   document.getElementById("property_name").innerHTML = String(textField.value);
-  document.getElementById("property_address").innerHTML = JSON.stringify(data.D.filter(b => {
-    return (
-        exp.test(b.A.toLowerCase()) || 
-        exp.test(b.B.toLowerCase()) || 
-        exp.test(b.C) ||
-        exp.test(b.D.toLowerCase())
-    );
-  }))
+  document.getElementById("property_address").innerHTML = JSON.stringify(data.D);
   document.getElementById("property_narrative").innerHTML = JSON.stringify(data.C);  
 }
   
