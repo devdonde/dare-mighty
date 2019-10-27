@@ -14,9 +14,12 @@ const update = () => {
   let underscored = textField.value.replace(/ /g,"_");
   let exp = new RegExp(textField.value.toLowerCase());
   let dataSet;
+  // Update the placeholders
   document.getElementById("property_name").innerHTML = String(textField.value);
   document.getElementById("property_address").innerHTML = JSON.stringify(data.D);
   document.getElementById("property_narrative").innerHTML = JSON.stringify(data.C);
+  // Create Google Map API search string
+  console.log(String(textField.value));
 }
 
 var data = [
