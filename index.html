@@ -1,2 +1,337 @@
 <!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!-- templatemo 416 xenon -->
+<!--
+Xenon Template
+http://www.templatemo.com/tm-416-xenon
+-->
+<head>
+    <meta charset="utf-8">
+    <title>Dare Mighty Hack</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <!--Ratchet css-->
+    <style type="text/css">
+    .art-img:hover  {
+        border: solid 6px #7bb9b9;
+        border-radius: 6px;
+        cursor: pointer;
+        opacity: 1;
+    }
+    .art-img {
+        border: solid 6px white;
+        border-radius: 6px;
+        opacity: 0.5;
+    }
+    .art-img.active {
+        border: solid 6px #026a6a;
+        border-radius: 6px;
+        opacity: 1;
+    }
+    .photo-img:hover  {
+        border: solid 6px #7bb9b9;
+        border-radius: 6px;
+        cursor: pointer;
+        opacity: 1;
+    }
+    .photo-img {
+        border: solid 6px #aaa;
+        border-radius: 6px;
+        opacity: 0.5;
+    }
+    .photo-img.active {
+        border: solid 6px #026a6a;
+        border-radius: 6px;
+        opacity: 1;
+    }
+    .apply-button:hover  {
+        cursor: pointer;
+    }
+    </style>
+
+    <!-- Bootstrap Stylesheet -->
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+    <!--core css-->
+    <link href="css/bootstrap-material-design.min.css" rel="stylesheet">
+    <link href="css/product.css" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- Google Font -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="js/cloudinary.js"></script>
+</head>
+
+<body>
+    <nav class="site-header sticky-top py-1">
+      <div class="container d-flex flex-column flex-md-row justify-content-between">
+        <a class="py-2 d-none d-md-inline-block" href="#">Home</a>
+        <a class="py-2 d-none d-md-inline-block" href="#">Associate Portal</a>
+        <div id="search-form">
+                <input id="textfield" class="form-control" type="text" placeholder="Enter address information..." />
+        </div>
+        <button class="btn btn-success" onclick="update()">Search</button>
+      </div>
+    </nav>
+
+    
+
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+        <div class="col-md-5 p-lg-5 mx-auto my-5">
+        <h1 ><pre id="property_address" class="display-4 font-weight-normal">Property Address Placeholder</pre></h1>
+        <h2><pre id="property_name" class="lead font-weight-normal">Property Name Placeholder</pre></h2>
+        <p><pre id="property_narrative" class="font-weight-normal">Property Narrative Placeholder. Lorem ipsum dolor sit amet, 
+            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</pre></p>
+      </div>
+    </div>
+
+    <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+      <div class="bg-dark mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+        <div class="my-3 py-3">
+          <h2 class="display-5">Generate client vision</h2>
+          <p class="lead">Select client logo</p>
+          <div style="text-align:center;padding-top: 5px;">
+            <span style="display:inline-block;vertical-align:top;">
+            <img  id="photo1" data-url-choice="photo1" data-url-image="mebxqz8b67eosdkvtn4m" class="photo-img" width=100 height=100 src="http://res.cloudinary.com/idemo/image/upload/w_100,h_100,c_fill,dpr_2.0/mebxqz8b67eosdkvtn4m.jpg" alt="mebxqz8b67eosdkvtn4m target photo" title="mebxqz8b67eosdkvtn4m target photo" style="margin-right:0px;margin-left: 0px;display:block;" /></a>
+            </span>
+            <span style="display:inline-block;vertical-align:top;">
+            <img id="photo2" data-url-choice="photo2" data-url-image="donhk3bc9pcojonwzm0e" class="photo-img" width=100 height=100 src="http://res.cloudinary.com/idemo/image/upload/w_100,h_100,c_fill,dpr_2.0/donhk3bc9pcojonwzm0e.jpg" alt="donhk3bc9pcojonwzm0e target photo" title="donhk3bc9pcojonwzm0e target photo" style="margin-right:0px;display:block;" /></a>
+            </span>
+            <span style="display:inline-block;vertical-align:top;">
+            <img id="photo3" data-url-choice="photo3" data-url-image="djro0htkugr24ysvudqn" class="photo-img" width=100 height=100 src="http://res.cloudinary.com/idemo/image/upload/w_100,h_100,c_fill,dpr_2.0/djro0htkugr24ysvudqn.jpg" alt="djro0htkugr24ysvudqn target photo" title="djro0htkugr24ysvudqn target photo" style="margin-right:0px;display:block;" /></a>
+            </span>
+            <span style="display:inline-block;vertical-align:top;">
+            <img id="photo4" data-url-choice="photo4" data-url-image="g7yv0wkhw8oyubwsv51j" class="photo-img" width=100 height=100 src="http://res.cloudinary.com/idemo/image/upload/w_100,h_100,c_fill,dpr_2.0/g7yv0wkhw8oyubwsv51j.jpg" alt="g7yv0wkhw8oyubwsv51j target photo" title="g7yv0wkhw8oyubwsv51j target photo" style="margin-right:0px;display:block;" /></a>
+            </span>
+            </div>
+            <div style="text-align:center">
+                <span class="apply-button" id="neural_apply">
+                <img  style="margin-top: 20px;" src="http://res.cloudinary.com/demo/image/upload/w_0.75/merge_btn.png" >
+                </span>
+            </div>
+        </div>
+      </div>
+
+      <div class="bg-primary mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+        <div class="my-3 p-3">
+          <h2 class="display-5">Generated Image</h2>
+            <div>
+                <span style="display:inline-block;vertical-align:top;">
+                <a id="imagelink" href="https://maps.googleapis.com/maps/api/streetview?location=211_S_Laflin_S&size=456x456&key=AIzaSyC2bd3qlr8st5twYYuG2Xj1yer4cSQzYFw" target ="_blank" data-url-template3="http://res.cloudinary.com/idemo/image/upload/l_text:Arial_80:Buckets,l_#art_image#,w_100,h_100,g_north/#use-img#.jpg">
+                <img id="testpic" src="https://maps.googleapis.com/maps/api/streetview?location=211_S_Laflin_St&size=900x300&key=AIzaSyC2bd3qlr8st5twYYuG2Xj1yer4cSQzYFw" alt="your generated neural art" title="your generated neural art"  data-url-template="http://res.cloudinary.com/idemo/image/upload/l_#art_image#,w_100,h_100,g_north/#use-img#.jpg" />
+                </a>
+                <div align="center" class="div_url" style="font-size: 60%;">
+                <a id="cloudurl" href="https://maps.googleapis.com/maps/api/streetview?location=211_S_Laflin_St&size=456x456&key=AIzaSyC2bd3qlr8st5twYYuG2Xj1yer4cSQzYFw" target="_blank" data-url-templated="http://res.cloudinary.com/idemo/image/upload/l_text:Arial_80:Buckets,l_#art_image#,w_100,h_100,g_north/#use-img#.jpg"><span id="c-url">https://maps.googleapis.com/maps/api/streetview?location=211_S_Laflin_S&size=456x456&key=AIzaSyC2bd3qlr8st5twYYuG2Xj1yer4cSQzYFw</span></a>
+                <p>
+                </div>
+                </span>
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+
+<!--untouched code lol-->
+
+    <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+      <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 p-3">
+          <h2 class="display-5">We could put more information here!</h2>
+          <p class="lead">we sure could.</p>
+        </div>
+      </div>
+      <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 py-3">
+          <h2 class="display-5">And here! Perhaps a facebook widget.</h2>
+          <p class="lead">And then more information.</p>
+        </div>
+      </div>
+    </div>
+
+
+<!--Footer Information-->
+    <footer class="container py-5">
+        <div class="row">
+          <div class="col-12 col-md">
+            <small class="d-block mb-3 text-muted">&copy; 2017-2018</small>
+          </div>
+          <div class="col-6 col-md">
+            <h5>Features</h5>
+            <ul class="list-unstyled text-small">
+              <li><a class="text-muted" href="#">Cool stuff</a></li>
+              <li><a class="text-muted" href="#">Random feature</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md">
+            <h5>Resources</h5>
+            <ul class="list-unstyled text-small">
+              <li><a class="text-muted" href="#">Resource</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md">
+            <h5>Resources</h5>
+            <ul class="list-unstyled text-small">
+              <li><a class="text-muted" href="#">Business</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md">
+            <h5>About</h5>
+            <ul class="list-unstyled text-small">
+              <li><a class="text-muted" href="#">Team</a></li>
+              <li><a class="text-muted" href="#">Locations</a></li>
+              <li><a class="text-muted" href="#">Privacy</a></li>
+              <li><a class="text-muted" href="#">Terms</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>   
+</body>
+</html>
+<!--Scripts-->
+    <!-- Javascript cloudinary-->
+    <script type="text/javascript">
+var A = "custom";
+var B;
+
+
+function updateResult(result) {
+    var $display = "http://res.cloudinary.com/idemo/image/upload/l_#use-img#,w_100,h_100,g_north/#art_image#.jpg"
+    var $urldisplay = "http://res.cloudinary.com/idemo/image/upload/l_#use-img#,w_100,h_100,g_north/#art_image#.jpg"
+    var $linkdisplay = "http://res.cloudinary.com/idemo/image/upload/l_#use-img#,w_100,h_100,g_north/#art_image#.jpg"
+    var $userpic = "http://res.cloudinary.com/idemo/image/upload/w_100,h_100,c_pad,dpr_2.0/#upic#.jpg"
+
+    var $imglink = $('#imagelink');
+    var $img = $('#testpic');
+    var widget_id = result["public_id"];
+
+    // // Create Google Map API search string
+    // var value = document.getElementById(textfield).textField.value.toLowerCase();
+    // var underscored = String(document.getElementById(textfield).textField.value).replace(/ /g,"_");
+    // var $mapsUrl = "https://maps.googleapis.com/maps/api/streetview?location=#underscored#&size=900x300&key=AIzaSyC2bd3qlr8st5twYYuG2Xj1yer4cSQzYFw"
+    // var $newMapsUrl = $mapsUrl.replace('#underscored#', underscored);
+    // console.log($newMapsUrl);
+
+    A =   widget_id;
+    if (!B) {
+    //   B = String($newMapsUrl);
+        B = 'jmss9xhzpc90mdfu0tas';
+      $('#art1').addClass('active');
+    }
+
+    var newUrl = $display.replace('#use-img#', A).replace('#art_image#', B);
+    var newUrl2 = $urldisplay.replace('#use-img#', A).replace('#art_image#', B);
+    var newUrl3 = $linkdisplay.replace('#use-img#', A).replace('#art_image#', B);
+
+     var newUserUrl = $userpic.replace('#upic#', A);
+
+
+    var $ccloudurl = $('#cloudurl');
+    document.getElementById("c-url").textContent=newUrl2;
+    $img.attr('src', newUrl);
+    $ccloudurl.attr('href', newUrl2);
+    $imglink.attr('href', newUrl3);
+   $('#photo4').attr('src', newUserUrl).data('url-image', widget_id);
+
+     $('.photo-img').removeClass('active');
+     $('#photo4').addClass('active');
+  };
+
+  document.getElementById("upload_widget_opener").addEventListener("click", function(e) {
+     e.preventDefault();
+    cloudinary.openUploadWidget({ cloud_name: 'idemo', upload_preset: 'st_blog',
+    sources: ['local','url','camera','dropbox', 'image_search','google_photos', 'facebook'], google_api_key: 'AIzaSyDaQj7FO1IQtp9DSB5YNP5jjG6f_mItEQ4'},
+      function(error, result) { console.log(result[0].public_id);  console.log(error, result); updateResult(result[0]) });
+  }, false);
+</script>
+<script>
+ //<![CDATA[
+ function insertScript(src, callback) {
+  var script = document.createElement('script');
+  script.onload = callback;
+  script.type = 'text/javascript';
+  script.async = true;
+  script.src = src;
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(script, s);
+ }
+
+ insertScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js', function(){
+
+  $('.apply-button').click(function(){
+
+
+    var $display = "http://res.cloudinary.com/idemo/image/upload/l_#use-img#,w_100,h_100,g_north/#art_image#.jpg"
+    var $urldisplay = "http://res.cloudinary.com/idemo/image/upload/l_#use-img#,w_100,h_100,g_north/#art_image#.jpg"
+    var $linkdisplay = "http://res.cloudinary.com/idemo/image/upload/l_#use-img#,w_100,h_100,g_north/#art_image#.jpg"
+
+    var $imglink = $('#imagelink');
+    var $img = $('#testpic');
+
+
+    if (A == "custom") {
+      return;
+    }
+
+    if (!A) {
+      A = "art-here"
+    }
+    if (!B) {
+    //   B = String($newMapsUrl)
+        B = 'jmss9xhzpc90mdfu0tas'
+    }
+
+    var newUrl = $display.replace('#use-img#', A).replace('#art_image#', B);
+    var newUrl2 = $urldisplay.replace('#use-img#', A).replace('#art_image#', B);
+    var newUrl3 = $linkdisplay.replace('#use-img#', A).replace('#art_image#', B);
+
+
+    var $ccloudurl = $('#cloudurl');
+    document.getElementById("c-url").textContent=newUrl2;
+    $img.attr('src', newUrl);
+    $ccloudurl.attr('href', newUrl2);
+    $imglink.attr('href', newUrl3);
+
+  });
+
+
+  $('.photo-img').click(function(){
+
+    var $sender = $(this);
+    A =  $sender.data('url-image');
+     $('.photo-img').removeClass('active');
+   $sender.addClass('active');
+
+
+  });
+
+  $('.art-img').click(function(){
+
+    var $sender = $(this);
+    B =  $sender.data('url-image');
+     $('.art-img').removeClass('active');
+   $sender.addClass('active');
+
+  });
+
+ });
+ //]]>
+</script>
+          <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2bd3qlr8st5twYYuG2Xj1yer4cSQzYFw&callback=initialize"></script>
+          <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+          <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+          <script src="js/bootstrap.min.js"></script>
+          <script src="js/plugins.js"></script>
+          <script src="js/main.js"></script>
+=======
 <p>Hello world!</p>
+
