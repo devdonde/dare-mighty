@@ -77,10 +77,6 @@ http://www.templatemo.com/tm-416-xenon
                 <input id="textfield" class="form-control" type="text" placeholder="Enter address information..." />
         </div>
         <button class="btn btn-success" onclick="update()">Search</button>
-        <!-- <form class="search-bar" action="">
-            <input id="search-bar" type="text" name="Address" placeholder="Enter property information...">
-            <p><span id='display'></span></p>
-        </form> -->
       </div>
     </nav>
 
@@ -130,11 +126,11 @@ http://www.templatemo.com/tm-416-xenon
           <h2 class="display-5">Generated Image</h2>
             <div>
                 <span style="display:inline-block;vertical-align:top;">
-                <a id="imagelink" href="https://maps.googleapis.com/maps/api/streetview?location=211_S_Laflin_S&size=456x456&key=AIzaSyC2bd3qlr8st5twYYuG2Xj1yer4cSQzYFw" target ="_blank" data-url-template3="http://res.cloudinary.com/idemo/image/upload/l_text:Arial_80:Buckets,l_#art_image#,w_200,h_200,g_north/#use-img#.jpg">
-                <img id="testpic" src="https://maps.googleapis.com/maps/api/streetview?location=211_S_Laflin_St&size=900x300&key=AIzaSyC2bd3qlr8st5twYYuG2Xj1yer4cSQzYFw" alt="your generated neural art" title="your generated neural art"  data-url-template="http://res.cloudinary.com/idemo/image/upload/l_#art_image#,w_200,h_200,g_north/#use-img#.jpg" />
+                <a id="imagelink" href="https://maps.googleapis.com/maps/api/streetview?location=211_S_Laflin_S&size=456x456&key=AIzaSyC2bd3qlr8st5twYYuG2Xj1yer4cSQzYFw" target ="_blank" data-url-template3="http://res.cloudinary.com/idemo/image/upload/l_text:Arial_80:Buckets,l_#art_image#,w_100,h_100,g_north/#use-img#.jpg">
+                <img id="testpic" src="https://maps.googleapis.com/maps/api/streetview?location=211_S_Laflin_St&size=900x300&key=AIzaSyC2bd3qlr8st5twYYuG2Xj1yer4cSQzYFw" alt="your generated neural art" title="your generated neural art"  data-url-template="http://res.cloudinary.com/idemo/image/upload/l_#art_image#,w_100,h_100,g_north/#use-img#.jpg" />
                 </a>
                 <div align="center" class="div_url" style="font-size: 60%;">
-                <a id="cloudurl" href="https://maps.googleapis.com/maps/api/streetview?location=211_S_Laflin_St&size=456x456&key=AIzaSyC2bd3qlr8st5twYYuG2Xj1yer4cSQzYFw" target="_blank" data-url-templated="http://res.cloudinary.com/idemo/image/upload/l_text:Arial_80:Buckets,l_#art_image#,w_200,h_200,g_north/#use-img#.jpg"><span id="c-url">https://maps.googleapis.com/maps/api/streetview?location=211_S_Laflin_S&size=456x456&key=AIzaSyC2bd3qlr8st5twYYuG2Xj1yer4cSQzYFw</span></a>
+                <a id="cloudurl" href="https://maps.googleapis.com/maps/api/streetview?location=211_S_Laflin_St&size=456x456&key=AIzaSyC2bd3qlr8st5twYYuG2Xj1yer4cSQzYFw" target="_blank" data-url-templated="http://res.cloudinary.com/idemo/image/upload/l_text:Arial_80:Buckets,l_#art_image#,w_100,h_100,g_north/#use-img#.jpg"><span id="c-url">https://maps.googleapis.com/maps/api/streetview?location=211_S_Laflin_S&size=456x456&key=AIzaSyC2bd3qlr8st5twYYuG2Xj1yer4cSQzYFw</span></a>
                 <p>
                 </div>
                 </span>
@@ -142,8 +138,6 @@ http://www.templatemo.com/tm-416-xenon
         </div>
       </div>
     </div>
-
-
 
 
 
@@ -163,21 +157,6 @@ http://www.templatemo.com/tm-416-xenon
         </div>
       </div>
     </div>
-
-    <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
-            <div class="bg-primary mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
-                <div class="my-3 py-3">
-                  <h2 class="display-5">Another headline</h2>
-                  <p class="lead">And an even wittier subheading.</p>
-                </div>
-            </div>
-            <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-                <div class="my-3 p-3">
-                <h2 class="display-5">Another headline</h2>
-                <p class="lead">And an even wittier subheading.</p>
-            </div>
-          </div>
-        </div>
 
 
 <!--Footer Information-->
@@ -226,9 +205,9 @@ var B;
 
 
 function updateResult(result) {
-    var $display = "http://res.cloudinary.com/idemo/image/upload/l_#use-img#,w_200,h_200,g_north/#art_image#.jpg"
-    var $urldisplay = "http://res.cloudinary.com/idemo/image/upload/l_#use-img#,w_200,h_200,g_north/#art_image#.jpg"
-    var $linkdisplay = "http://res.cloudinary.com/idemo/image/upload/l_#use-img#,w_200,h_200,g_north/#art_image#.jpg"
+    var $display = "http://res.cloudinary.com/idemo/image/upload/l_#use-img#,w_100,h_100,g_north/#art_image#.jpg"
+    var $urldisplay = "http://res.cloudinary.com/idemo/image/upload/l_#use-img#,w_100,h_100,g_north/#art_image#.jpg"
+    var $linkdisplay = "http://res.cloudinary.com/idemo/image/upload/l_#use-img#,w_100,h_100,g_north/#art_image#.jpg"
     var $userpic = "http://res.cloudinary.com/idemo/image/upload/w_100,h_100,c_pad,dpr_2.0/#upic#.jpg"
 
     var $imglink = $('#imagelink');
@@ -290,19 +269,13 @@ function updateResult(result) {
   $('.apply-button').click(function(){
 
 
-    var $display = "http://res.cloudinary.com/idemo/image/upload/l_#use-img#,w_200,h_200,g_north/#art_image#.jpg"
-    var $urldisplay = "http://res.cloudinary.com/idemo/image/upload/l_#use-img#,w_200,h_200,g_north/#art_image#.jpg"
-    var $linkdisplay = "http://res.cloudinary.com/idemo/image/upload/l_#use-img#,w_200,h_200,g_north/#art_image#.jpg"
+    var $display = "http://res.cloudinary.com/idemo/image/upload/l_#use-img#,w_100,h_100,g_north/#art_image#.jpg"
+    var $urldisplay = "http://res.cloudinary.com/idemo/image/upload/l_#use-img#,w_100,h_100,g_north/#art_image#.jpg"
+    var $linkdisplay = "http://res.cloudinary.com/idemo/image/upload/l_#use-img#,w_100,h_100,g_north/#art_image#.jpg"
 
     var $imglink = $('#imagelink');
     var $img = $('#testpic');
-    
-    // Create Google Map API search string
-    var value = document.getElementById(textfield).textField.value.toLowerCase();
-    var underscored = String(document.getElementById(textfield).textField.value).replace(/ /g,"_");
-    var $mapsUrl = "https://maps.googleapis.com/maps/api/streetview?location=#underscored#&size=900x300&key=AIzaSyC2bd3qlr8st5twYYuG2Xj1yer4cSQzYFw"
-    var $newMapsUrl = $mapsUrl.replace('#underscored#', underscored);
-    console.log($newMapsUrl);
+
 
     if (A == "custom") {
       return;
