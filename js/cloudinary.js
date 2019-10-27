@@ -13,26 +13,31 @@ document.addEventListener('DOMContentLoaded', () => {
 // Runs when updating search
 const update = () => {
   let value = textField.value.toLowerCase;
+  let underscored = textField.value.replace(/ /g,"_");
   let exp = new RegExp(textField.value.toLowerCase());
   let dataSet;
-  if (value === "") {
+  document.getElementById("property_name").innerHTML = "data.A";
+  document.getElementById("property_address").innerHTML = "data.D";
+  document.getElementById("property_narrative").innerHTML = "data.C";
+  // if (value === "") {
     // Add all objects to dataSet
-    dataSet = data.D;
-  } else {
+    // dataSet = data.D;
+  // } else {
     // Filter out objects that matches search query
-    dataSet = data.D.filter(b => {
-      return (
+    // dataSet = data.D.filter(b => {
+      // return (
         // exp.test(b.A.toLowerCase()) || 
         // exp.test(b.B.toLowerCase()) || 
         // exp.test(b.C) ||
-        exp.test(b.D.toLowerCase())
-      );
-    });
+        // exp.test(b.D.toLowerCase())
+      // );
+    // });
   }
   // Remove previous results and add the new ones
   // resultContainer.innerHTML = "";
   // addItems(dataSet);
 }
+
 
 // const addItems = data => {
 //   let container = document.createElement('div');
