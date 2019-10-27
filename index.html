@@ -71,8 +71,8 @@ http://www.templatemo.com/tm-416-xenon
 <script>
 $(document).ready(function(){
     $("form").submit(function(){
-        var $underscored=$Address.replace(/ /g,"_");
-        alert($(underscored));
+        var underscored=document.getElementById("search-bar").replace(/ /g,"_");
+        alert($underscored);
         // console.log($(Address));
     });
 });
@@ -84,7 +84,7 @@ $(document).ready(function(){
       <div class="container d-flex flex-column flex-md-row justify-content-between">
         <a class="py-2 d-none d-md-inline-block" href="#">Home</a>
         <a class="py-2 d-none d-md-inline-block" href="#">Associate Portal</a>
-        <form class="search-bar" action="">
+        <form id="search-bar" class="search-bar" action="">
             <input type="text" name="Address" placeholder="Enter property information...">
         </form>
         <a class="py-2 d-none d-md-inline-block" href="#">Prospective Clients</a>
