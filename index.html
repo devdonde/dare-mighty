@@ -68,74 +68,6 @@ http://www.templatemo.com/tm-416-xenon
 
 </head>
 
-<script>
-let resultContainer, textField;
-
-document.addEventListener('DOMContentLoaded', () => {
-  resultContainer = document.getElementById('search-result');
-  textField = document.getElementById('textfield');
-  addItems(data.D);
-  
-  textField.addEventListener('change', () => {
-    setTimeout(update(), 100);
-  });
-});
-
-// Runs when uppdating search
-const update = () => {
-  let value = textField.value.toLowerCase;
-  let exp = new RegExp(textField.value.toLowerCase());
-  let dataSet;
-  if (value === "") {
-    // Add all objects to dataSet
-    dataSet = data.D;
-  } else {
-    // Filter out objects that matches search query
-    dataSet = data.D.filter(b => {
-      return (
-        exp.test(b.name.toLowerCase()) || 
-        exp.test(b.category.toLowerCase()) || 
-        exp.test(b.price)
-      );
-    });
-  }
-  // Remove previous results and add the new ones
-  resultContainer.innerHTML = "";
-  addItems(dataSet);
-}
-
-const addItems = data => {
-  let container = document.createElement('div');
-  container.classList.add('list-item');
-  // Creates column headers
-  createTextElement('div', 'Title', container);
-  createTextElement('div', 'Category', container);
-  createTextElement('div', 'Price', container);
-  resultContainer.appendChild(container);
-  // Loops through the provided objects
-  for (let i = 0; i < data.length; i++) {
-    let container = document.createElement('div');
-    container.classList.add('list-item');
-    // Adds values for every row
-    createTextElement('div', data[i].name, container);
-    createTextElement('div', data[i].category, container);
-    createTextElement('div', data[i].price + ' kr', container);
-    resultContainer.appendChild(container);
-  }
-}
-
-// Function to create, and append, elements containing text
-const createTextElement = (elem, text, appendTo) => {
-  let container = document.createElement(elem);
-  let textNode = document.createTextNode(text);
-  container.appendChild(textNode);
-  appendTo.appendChild(container);
-}
-
-var data = require('propertycsv/json');
-</script>
-
-
 <body>
     <nav class="site-header sticky-top py-1">
       <div class="container d-flex flex-column flex-md-row justify-content-between">
@@ -156,7 +88,7 @@ var data = require('propertycsv/json');
     </div>
     <div id="search-result" />
 
-    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+    <!-- <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
       <div class="col-md-5 p-lg-5 mx-auto my-5">
         <h1 id="property" class="display-4 font-weight-normal">Property Name Placeholder</h1>
         <h2 class="lead font-weight-normal">Property Address Placeholder</h2>
@@ -208,7 +140,7 @@ var data = require('propertycsv/json');
             </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
 
 
@@ -216,7 +148,7 @@ var data = require('propertycsv/json');
 
 <!--untouched code lol-->
 
-    <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+    <!-- <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
       <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
         <div class="my-3 p-3">
           <h2 class="display-5">Another headline</h2>
@@ -244,11 +176,11 @@ var data = require('propertycsv/json');
                 <p class="lead">And an even wittier subheading.</p>
             </div>
           </div>
-        </div>
+        </div> -->
 
 
 <!--Footer Information-->
-    <footer class="container py-5">
+    <!-- <footer class="container py-5">
         <div class="row">
           <div class="col-12 col-md">
             <small class="d-block mb-3 text-muted">&copy; 2017-2018</small>
@@ -282,7 +214,7 @@ var data = require('propertycsv/json');
             </ul>
           </div>
         </div>
-      </footer>   
+      </footer>    -->
 </body>
 </html>
 <!--Scripts-->
@@ -446,3 +378,4 @@ function updateResult(result) {
           <script src="js/bootstrap.min.js"></script>
           <script src="js/plugins.js"></script>
           <script src="js/main.js"></script>
+          <script src="js/cloudinary.js"></script>

@@ -1,111 +1,159 @@
-var A = "custom";
-var B;
+let resultContainer, textField;
+// var data = require('./propertycsv.json');
 
-
-function updateResult(result) {
-    var $display = "http://res.cloudinary.com/demo/image/upload/e_style_transfer,l_#art_image#/#use-img#.jpg"
-    var $urldisplay = "http://res.cloudinary.com/demo/image/upload/e_style_transfer,l_#art_image#/#use-img#.jpg"
-    var $linkdisplay = "http://res.cloudinary.com/demo/image/upload/e_style_transfer,l_#art_image#/#use-img#.jpg"
-    var $userpic = "http://res.cloudinary.com/demo/image/upload/w_100,h_100,c_pad,dpr_2.0/#upic#.jpg"
-
-    var $imglink = $('#imagelink');
-    var $img = $('#testpic');
-    var widget_id = result["public_id"];
-    A =   widget_id;
-    if (!B) {
-      B = "sailing_angel";
-      $('#art1').addClass('active');
-    }
-
-    var newUrl = $display.replace('#use-img#', A).replace('#art_image#', B);
-    var newUrl2 = $urldisplay.replace('#use-img#', A).replace('#art_image#', B);
-    var newUrl3 = $linkdisplay.replace('#use-img#', A).replace('#art_image#', B);
-
-     var newUserUrl = $userpic.replace('#upic#', A);
-
-
-    var $ccloudurl = $('#cloudurl');
-    document.getElementById("c-url").textContent=newUrl2;
-    $img.attr('src', newUrl);
-    $ccloudurl.attr('href', newUrl2);
-    $imglink.attr('href', newUrl3);
-   $('#photo4').attr('src', newUserUrl).data('url-image', widget_id);
-
-     $('.photo-img').removeClass('active');
-     $('#photo4').addClass('active');
-  };
-
-  document.getElementById("upload_widget_opener").addEventListener("click", function(e) {
-     e.preventDefault();
-    cloudinary.openUploadWidget({ cloud_name: 'demo', upload_preset: 'st_blog',
-    sources: ['local','url','camera','dropbox', 'image_search','google_photos', 'facebook'], google_api_key: 'AIzaSyDaQj7FO1IQtp9DSB5YNP5jjG6f_mItEQ4'},
-      function(error, result) { console.log(result[0].public_id);  console.log(error, result); updateResult(result[0]) });
-  }, false);
-
- //<![CDATA[
- function insertScript(src, callback) {
-  var script = document.createElement('script');
-  script.onload = callback;
-  script.type = 'text/javascript';
-  script.async = true;
-  script.src = src;
-  var s = document.getElementsByTagName('script')[0];
-  s.parentNode.insertBefore(script, s);
- }
-
- insertScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js', function(){
-
-  $('.apply-button').click(function(){
-
-
-    var $display = "http://res.cloudinary.com/demo/image/upload/e_style_transfer,l_#art_image#/#use-img#.jpg"
-    var $urldisplay = "http://res.cloudinary.com/demo/image/upload/e_style_transfer,l_#art_image#/#use-img#.jpg"
-    var $linkdisplay = "http://res.cloudinary.com/demo/image/upload/e_style_transfer,l_#art_image#/#use-img#.jpg"
-
-    var $imglink = $('#imagelink');
-    var $img = $('#testpic');
-
-    if (A == "custom") {
-      return;
-    }
-
-    if (!A) {
-      A = "art-here"
-    }
-    if (!B) {
-      B = "sailing_angel"
-    }
-
-    var newUrl = $display.replace('#use-img#', A).replace('#art_image#', B);
-    var newUrl2 = $urldisplay.replace('#use-img#', A).replace('#art_image#', B);
-    var newUrl3 = $linkdisplay.replace('#use-img#', A).replace('#art_image#', B);
-
-
-    var $ccloudurl = $('#cloudurl');
-    document.getElementById("c-url").textContent=newUrl2;
-    $img.attr('src', newUrl);
-    $ccloudurl.attr('href', newUrl2);
-    $imglink.attr('href', newUrl3);
-
+document.addEventListener('DOMContentLoaded', () => {
+  resultContainer = document.getElementById('search-result');
+  textField = document.getElementById('textfield');
+  addItems(data.books);
+  
+  textField.addEventListener('change', () => {
+    setTimeout(update(), 100);
   });
+});
 
-  $('.photo-img').click(function(){
+// Runs when uppdating search
+const update = () => {
+  let value = textField.value.toLowerCase;
+  let exp = new RegExp(textField.value.toLowerCase());
+  let dataSet;
+  if (value === "") {
+    // Add all objects to dataSet
+    dataSet = data.books;
+  } else {
+    // Filter out objects that matches search query
+    dataSet = data.books.filter(b => {
+      return (
+        exp.test(b.name.toLowerCase()) || 
+        exp.test(b.category.toLowerCase()) || 
+        exp.test(b.price)
+      );
+    });
+  }
+  // Remove previous results and add the new ones
+  resultContainer.innerHTML = "";
+  addItems(dataSet);
+}
 
-    var $sender = $(this);
-    A =  $sender.data('url-image');
-     $('.photo-img').removeClass('active');
-   $sender.addClass('active');
+const addItems = data => {
+  let container = document.createElement('div');
+  container.classList.add('list-item');
+  // Creates column headers
+  createTextElement('div', 'Title', container);
+  createTextElement('div', 'Category', container);
+  createTextElement('div', 'Price', container);
+  resultContainer.appendChild(container);
+  // Loops through the provided objects
+  for (let i = 0; i < data.length; i++) {
+    let container = document.createElement('div');
+    container.classList.add('list-item');
+    // Adds values for every row
+    createTextElement('div', data[i].name, container);
+    createTextElement('div', data[i].category, container);
+    createTextElement('div', data[i].price + ' kr', container);
+    resultContainer.appendChild(container);
+  }
+}
 
+// Function to create, and append, elements containing text
+const createTextElement = (elem, text, appendTo) => {
+  let container = document.createElement(elem);
+  let textNode = document.createTextNode(text);
+  container.appendChild(textNode);
+  appendTo.appendChild(container);
+}
 
-  });
-
-  $('.art-img').click(function(){
-
-    var $sender = $(this);
-    B =  $sender.data('url-image');
-     $('.art-img').removeClass('active');
-   $sender.addClass('active');
-
-  });
-
- });
+// List of books
+const data = {
+  books: [
+    {
+      id: 0,
+      name: 'Some name',
+      category: 'Horror',
+      price: 120
+    },
+    {
+      id: 1,
+      name: 'Name some',
+      category: 'Comedy',
+      price: 100
+    },
+    {
+      id: 2,
+      name: 'What\'s up?',
+      category: 'Biography',
+      price: 110
+    },
+    {
+      id: 3,
+      name: 'Need help?',
+      category: 'Comedy',
+      price: 90
+    },
+    {
+      id: 4,
+      name: 'Don\'t ask me!',
+      category: 'Drama',
+      price: 100
+    },
+    {
+      id: 5,
+      name: 'Come on!',
+      category: 'Thriller',
+      price: 70
+    },
+    {
+      id: 6,
+      name: 'An idiot like me',
+      category: 'Biography',
+      price: 100
+    },
+    {
+      id: 7,
+      name: 'All about that base',
+      category: 'Thriller',
+      price: 120
+    },
+    {
+      id: 8,
+      name: 'Cash me outside',
+      category: 'Comedy',
+      price: 100
+    },
+    {
+      id: 9,
+      name: 'So fluffy I\'m gonna die!',
+      category: 'Biography',
+      price: 100
+    },
+    {
+      id: 10,
+      name: 'Quarl - A yellow story',
+      category: 'Biography',
+      price: 313
+    },
+    {
+      id: 11,
+      name: 'Let it go!',
+      category: 'Horror',
+      price: 170
+    },
+    {
+      id: 12,
+      name: 'Y u gotta b so rude?',
+      category: 'Drama',
+      price: 10
+    },
+    {
+      id: 13,
+      name: 'Nourly there',
+      category: 'Comedy',
+      price: 9001
+    },
+    {
+      id: 14,
+      name: 'SARA - Frame that work',
+      category: 'Technology',
+      price: 230
+    }
+  ]
+};
