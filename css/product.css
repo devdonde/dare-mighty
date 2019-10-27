@@ -1,3 +1,7 @@
+.apply-button:hover  {
+  cursor: pointer;
+}
+
 .container {
     max-width: 960px;
   }
@@ -82,8 +86,3 @@
   }
   
   .overflow-hidden { overflow: hidden; }
-
-
-  .apply-button:hover  {
-    cursor: pointer;
-  }
