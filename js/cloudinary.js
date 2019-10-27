@@ -1,4 +1,5 @@
 let resultContainer, textField;
+var data = require('./propertycsv.json');
 
 document.addEventListener('DOMContentLoaded', () => {
   resultContainer = document.getElementById('search-result');
