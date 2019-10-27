@@ -16,9 +16,9 @@ const update = () => {
   let underscored = textField.value.replace(/ /g,"_");
   let exp = new RegExp(textField.value.toLowerCase());
   let dataSet;
-  document.getElementById("property_name").innerHTML = createTextElement(data.A);
-  document.getElementById("property_address").innerHTML = createTextElement(data.D);
-  document.getElementById("property_narrative").innerHTML = createTextElement(data.C);
+  document.getElementById("property_name").innerHTML = JSON.stringify(data.A);
+  document.getElementById("property_address").innerHTML = JSON.stringify(data.D);
+  document.getElementById("property_narrative").innerHTML = JSON.stringify(data.C);
   // if (value === "") {
     // Add all objects to dataSet
     // dataSet = data.D;
