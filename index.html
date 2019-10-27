@@ -84,7 +84,7 @@ $(document).ready(function(){
         <a class="py-2 d-none d-md-inline-block" href="#">Home</a>
         <a class="py-2 d-none d-md-inline-block" href="#">Associate Portal</a>
         <form action="">
-            <input type="text" name="Address" placeholder="Enter property information...">
+            <input class="search-bar" type="text" name="Address" placeholder="Enter property information...">
         </form>
         <a class="py-2 d-none d-md-inline-block" href="#">Prospective Clients</a>
         <a class="py-2 d-none d-md-inline-block" href="#">Contact</a>
@@ -340,7 +340,7 @@ function updateResult(result) {
 
     <!--ik this shouldn't go here but whoops 2.4-->
     <script>
-            var input = document.getElementById("Search");
+            var input = document.getElementById("Address");
             input.addEventListener("keyup", function(event) {
               if (event.keyCode === 13) {
                event.preventDefault();
@@ -350,7 +350,7 @@ function updateResult(result) {
             </script>
           <script>
             function addressFunction() {
-              var x = document.getElementByName("Search").value;
+              var x = document.getElementByName("Address").value;
               document.getElementById("property").innerHTML = x;
             }
             </script>
