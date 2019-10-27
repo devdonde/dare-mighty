@@ -41,7 +41,7 @@ const addItems = data => {
   // createTextElement('div', 'A', container);
   // createTextElement('div', 'B', container);
   // createTextElement('div', 'C', container);
-  createTextElement('div', 'D', container);
+  createTextElement('div', '', container); //Column header
   resultContainer.appendChild(container);
   // Loops through the provided objects
   for (let i = 0; i < data.length; i++) {
