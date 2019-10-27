@@ -17,6 +17,7 @@ const update = () => {
   document.getElementById("property_name").innerHTML = String(textField.value);
   document.getElementById("property_address").innerHTML = JSON.stringify(data.D);
   document.getElementById("property_narrative").innerHTML = JSON.stringify(data.C);
+}
 
 var data = [
     {
