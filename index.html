@@ -76,6 +76,7 @@ http://www.templatemo.com/tm-416-xenon
             </div>
         </div>
       </div>
+
       <div class="bg-primary mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
         <div class="my-3 p-3">
           <h2 class="display-5">Generated Image</h2>
@@ -83,13 +84,16 @@ http://www.templatemo.com/tm-416-xenon
           <div id="pano"></div>
           <img src="https://maps.googleapis.com/maps/api/streetview?location=211_S_Laflin_St&size=900x300&key=AIzaSyC2bd3qlr8st5twYYuG2Xj1yer4cSQzYFw">
           <div> -->
-            <span style="display:inline-block;vertical-align:top;">
-            <a id="imagelink" href="https://maps.googleapis.com/maps/api/streetview?location=211_S_Laflin_St&size=900x300&key=AIzaSyC2bd3qlr8st5twYYuG2Xj1yer4cSQzYFw" target ="_blank" data-url-template3="http://res.cloudinary.com/demo/image/upload/l_text:Arial_80:Buckets,e_style_transfer,l_#art_image#/#use-img#.jpg">
-            <img id="testpic" src="https://maps.googleapis.com/maps/api/streetview?location=211_S_Laflin_St&size=900x300&key=AIzaSyC2bd3qlr8st5twYYuG2Xj1yer4cSQzYFw" alt="generated logo x property image" title="generated logo x property image"  data-url-template="http://res.cloudinary.com/demo/image/upload/e_style_transfer,l_#art_image#/#use-img#.jpg" />
-            </a>
-            <div align="center" class="div_url" style="font-size: 60%;">
-             <a id="cloudurl" href="https://maps.googleapis.com/maps/api/streetview?location=211_S_Laflin_St&size=900x300&key=AIzaSyC2bd3qlr8st5twYYuG2Xj1yer4cSQzYFw" target="_blank" data-url-templated="http://res.cloudinary.com/demo/image/upload/l_text:Arial_80:Buckets,e_style_transfer,l_#art_image#/#use-img#.jpg"><span id="c-url">https://maps.googleapis.com/maps/api/streetview?location=211_S_Laflin_St&size=900x300&key=AIzaSyC2bd3qlr8st5twYYuG2Xj1yer4cSQzYFw</span></a>
-            <p>
+            <div>
+                <span style="display:inline-block;vertical-align:top;">
+                <a id="imagelink" href="http://res.cloudinary.com/demo/image/upload/art_here.jpg" target ="_blank" data-url-template3="http://res.cloudinary.com/demo/image/upload/l_text:Arial_80:Buckets,e_style_transfer,l_#art_image#/#use-img#.jpg">
+                <img id="testpic" src="http://res.cloudinary.com/demo/image/upload/w_550,h_300,c_fit/art_here.jpg" alt="your generated neural art" title="your generated neural art"  data-url-template="http://res.cloudinary.com/demo/image/upload/e_style_transfer,l_#art_image#/#use-img#.jpg" />
+                </a>
+                <div align="center" class="div_url" style="font-size: 60%;">
+                <a id="cloudurl" href="http://res.cloudinary.com/demo/image/upload/art_here.jpg" target="_blank" data-url-templated="http://res.cloudinary.com/demo/image/upload/l_text:Arial_80:Buckets,e_style_transfer,l_#art_image#/#use-img#.jpg"><span id="c-url">http://res.cloudinary.com/demo/image/upload/art_here.jpg</span></a>
+                <p>
+                </div>
+                </span>
             </div>
         </div>
       </div>
@@ -102,16 +106,16 @@ http://www.templatemo.com/tm-416-xenon
 <!--untouched code lol-->
 
     <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
-      <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-        <div class="my-3 p-3">
-          <h2 class="display-5">Another headline</h2>
-          <p class="lead">And an even wittier subheading.</p>
+        <div class="bg-primary mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+            <div class="my-3 py-3">
+              <h2 class="display-5">Another headline</h2>
+              <p class="lead">And an even wittier subheading.</p>
+            </div>
         </div>
-      </div>
-      <div class="bg-primary mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
-        <div class="my-3 py-3">
-          <h2 class="display-5">Another headline</h2>
-          <p class="lead">And an even wittier subheading.</p>
+        <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+            <div class="my-3 p-3">
+            <h2 class="display-5">Another headline</h2>
+            <p class="lead">And an even wittier subheading.</p>
         </div>
       </div>
     </div>
@@ -233,7 +237,121 @@ http://www.templatemo.com/tm-416-xenon
     <script src="js/main.js"></script>
     <script src="js/cloudinary.js"></script>
 
-
-
 </body>
 </html>
+
+<script type="text/javascript">
+    var A = "custom";
+    var B;
+    
+    
+    function updateResult(result) {
+        var $display = "http://res.cloudinary.com/demo/image/upload/e_style_transfer,l_#art_image#/#use-img#.jpg"
+        var $urldisplay = "http://res.cloudinary.com/demo/image/upload/e_style_transfer,l_#art_image#/#use-img#.jpg"
+        var $linkdisplay = "http://res.cloudinary.com/demo/image/upload/e_style_transfer,l_#art_image#/#use-img#.jpg"
+        var $userpic = "http://res.cloudinary.com/demo/image/upload/w_100,h_100,c_pad,dpr_2.0/#upic#.jpg"
+    
+        var $imglink = $('#imagelink');
+        var $img = $('#testpic');
+        var widget_id = result["public_id"];
+        A =   widget_id;
+        if (!B) {
+          B = "sailing_angel";
+          $('#art1').addClass('active');
+        }
+    
+        var newUrl = $display.replace('#use-img#', A).replace('#art_image#', B);
+        var newUrl2 = $urldisplay.replace('#use-img#', A).replace('#art_image#', B);
+        var newUrl3 = $linkdisplay.replace('#use-img#', A).replace('#art_image#', B);
+    
+         var newUserUrl = $userpic.replace('#upic#', A);
+    
+    
+        var $ccloudurl = $('#cloudurl');
+        document.getElementById("c-url").textContent=newUrl2;
+        $img.attr('src', newUrl);
+        $ccloudurl.attr('href', newUrl2);
+        $imglink.attr('href', newUrl3);
+       $('#photo4').attr('src', newUserUrl).data('url-image', widget_id);
+    
+         $('.photo-img').removeClass('active');
+         $('#photo4').addClass('active');
+      };
+    
+      document.getElementById("upload_widget_opener").addEventListener("click", function(e) {
+         e.preventDefault();
+        cloudinary.openUploadWidget({ cloud_name: 'demo', upload_preset: 'st_blog',
+        sources: ['local','url','camera','dropbox', 'image_search','google_photos', 'facebook'], google_api_key: 'AIzaSyDaQj7FO1IQtp9DSB5YNP5jjG6f_mItEQ4'},
+          function(error, result) { console.log(result[0].public_id);  console.log(error, result); updateResult(result[0]) });
+      }, false);
+    </script>
+    <script>
+     //<![CDATA[
+     function insertScript(src, callback) {
+      var script = document.createElement('script');
+      script.onload = callback;
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = src;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(script, s);
+     }
+    
+     insertScript('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js', function(){
+    
+      $('.apply-button').click(function(){
+    
+    
+        var $display = "http://res.cloudinary.com/demo/image/upload/e_style_transfer,l_#art_image#/#use-img#.jpg"
+        var $urldisplay = "http://res.cloudinary.com/demo/image/upload/e_style_transfer,l_#art_image#/#use-img#.jpg"
+        var $linkdisplay = "http://res.cloudinary.com/demo/image/upload/e_style_transfer,l_#art_image#/#use-img#.jpg"
+    
+        var $imglink = $('#imagelink');
+        var $img = $('#testpic');
+    
+        if (A == "custom") {
+          return;
+        }
+    
+        if (!A) {
+          A = "art-here"
+        }
+        if (!B) {
+          B = "sailing_angel"
+        }
+    
+        var newUrl = $display.replace('#use-img#', A).replace('#art_image#', B);
+        var newUrl2 = $urldisplay.replace('#use-img#', A).replace('#art_image#', B);
+        var newUrl3 = $linkdisplay.replace('#use-img#', A).replace('#art_image#', B);
+    
+    
+        var $ccloudurl = $('#cloudurl');
+        document.getElementById("c-url").textContent=newUrl2;
+        $img.attr('src', newUrl);
+        $ccloudurl.attr('href', newUrl2);
+        $imglink.attr('href', newUrl3);
+    
+      });
+    
+      $('.photo-img').click(function(){
+    
+        var $sender = $(this);
+        A =  $sender.data('url-image');
+         $('.photo-img').removeClass('active');
+       $sender.addClass('active');
+    
+    
+      });
+    
+      $('.art-img').click(function(){
+    
+        var $sender = $(this);
+        B =  $sender.data('url-image');
+         $('.art-img').removeClass('active');
+       $sender.addClass('active');
+    
+      });
+    
+     });
+     //]]>
+    </script>
