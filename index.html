@@ -74,7 +74,7 @@ let resultContainer, textField;
 document.addEventListener('DOMContentLoaded', () => {
   resultContainer = document.getElementById('search-result');
   textField = document.getElementById('textfield');
-  addItems(data.books);
+  addItems(data.D);
   
   textField.addEventListener('change', () => {
     setTimeout(update(), 100);
@@ -88,10 +88,10 @@ const update = () => {
   let dataSet;
   if (value === "") {
     // Add all objects to dataSet
-    dataSet = data.books;
+    dataSet = data.D;
   } else {
     // Filter out objects that matches search query
-    dataSet = data.books.filter(b => {
+    dataSet = data.D.filter(b => {
       return (
         exp.test(b.name.toLowerCase()) || 
         exp.test(b.category.toLowerCase()) || 
@@ -145,15 +145,16 @@ var data = require('propertycsv/json');
             <input id="search-bar" type="text" name="Address" placeholder="Enter property information...">
             <p><span id='display'></span></p>
         </form> -->
-        <div id="search-form">
-                <input id="textfield" class="form-control" type="text" />
-                <button class="btn btn-success" onclick="update()">Search</button>
-              </div>
-              <div id="search-result" />
         <a class="py-2 d-none d-md-inline-block" href="#">Prospective Clients</a>
         <a class="py-2 d-none d-md-inline-block" href="#">Contact</a>
       </div>
     </nav>
+
+    <div id="search-form">
+        <input id="textfield" class="form-control" type="text" />
+        <button class="btn btn-success" onclick="update()">Search</button>
+    </div>
+    <div id="search-result" />
 
     <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
       <div class="col-md-5 p-lg-5 mx-auto my-5">
