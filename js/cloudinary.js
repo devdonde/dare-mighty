@@ -1,5 +1,4 @@
 let resultContainer, textField;
-// var data = require('./js/propertycsv.json');
 
 document.addEventListener('DOMContentLoaded', () => {
   resultContainer = document.getElementById('search-result');
@@ -41,6 +40,7 @@ const addItems = data => {
   createTextElement('div', 'A', container);
   createTextElement('div', 'B', container);
   createTextElement('div', 'C', container);
+  createTextElement('div', 'D', container);
   resultContainer.appendChild(container);
   // Loops through the provided objects
   for (let i = 0; i < data.length; i++) {
@@ -50,6 +50,7 @@ const addItems = data => {
     createTextElement('div', data[i].A, container);
     createTextElement('div', data[i].B, container);
     createTextElement('div', data[i].C + ' kr', container);
+    createTextElement('div', data[i].D, container);
     resultContainer.appendChild(container);
   }
 }
