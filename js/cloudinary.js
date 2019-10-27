@@ -8,6 +8,18 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+function getPropertyByAddress(D) {
+  return data.filter(
+    function(data) {
+      return data.D == D
+    }
+  );
+}
+
+var found = getPropertyByAddress('1 Astellas Way');
+
+document.getElementById('output').innerHTML = found[0].name;
+
 // Runs when updating search
 const update = () => {
   let value = textField.value.toLowerCase;
