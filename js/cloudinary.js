@@ -8,6 +8,14 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+function getPropertyByAddress(B) {
+  return data.filter(
+    function(data) {
+      return data.B == B
+    }
+  );
+}
+
 // Runs when updating search
 const update = () => {
   let value = textField.value.toLowerCase;
@@ -15,8 +23,9 @@ const update = () => {
   let exp = new RegExp(textField.value.toLowerCase());
   let dataSet;
   // Update the placeholders
-  document.getElementById("property_name").innerHTML = String(textField.value);
-  document.getElementById("property_address").innerHTML = JSON.stringify(data);
+  document.getElementById("property_address").innerHTML = String(textField.value);
+  let property_address = String(textField.value);
+  document.getElementById("property_name").innerHTML = JSON.stringify(getPropertyByAddress(property_address));
   document.getElementById("property_narrative").innerHTML = JSON.stringify(data.C);
   // Create Google Map API search string
   let underscored = String(textField.value).replace(/ /g,"_");
