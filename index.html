@@ -68,12 +68,24 @@ http://www.templatemo.com/tm-416-xenon
 
 </head>
 
+<script>
+$(document).ready(function(){
+    $("form").submit(function(){
+        alert("Submitted");
+        console.log($(Address))
+    });
+});
+</script>
+
+
 <body>
     <nav class="site-header sticky-top py-1">
       <div class="container d-flex flex-column flex-md-row justify-content-between">
         <a class="py-2 d-none d-md-inline-block" href="#">Home</a>
         <a class="py-2 d-none d-md-inline-block" href="#">Associate Portal</a>
-        <input type="text" name="Search" placeholder="Enter property information...">
+        <form action="">
+            <input type="text" name="Address" placeholder="Enter property information...">
+        </form>
         <a class="py-2 d-none d-md-inline-block" href="#">Prospective Clients</a>
         <a class="py-2 d-none d-md-inline-block" href="#">Contact</a>
       </div>
