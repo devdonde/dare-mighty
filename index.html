@@ -16,6 +16,38 @@ http://www.templatemo.com/tm-416-xenon
 
     <!--Ratchet css-->
     <style type="text/css">
+    .art-img:hover  {
+        border: solid 6px #7bb9b9;
+        border-radius: 6px;
+        cursor: pointer;
+        opacity: 1;
+    }
+    .art-img {
+        border: solid 6px white;
+        border-radius: 6px;
+        opacity: 0.5;
+    }
+    .art-img.active {
+        border: solid 6px #026a6a;
+        border-radius: 6px;
+        opacity: 1;
+    }
+    .photo-img:hover  {
+        border: solid 6px #7bb9b9;
+        border-radius: 6px;
+        cursor: pointer;
+        opacity: 1;
+    }
+    .photo-img {
+        border: solid 6px #aaa;
+        border-radius: 6px;
+        opacity: 0.5;
+    }
+    .photo-img.active {
+        border: solid 6px #026a6a;
+        border-radius: 6px;
+        opacity: 1;
+    }
     .apply-button:hover  {
         cursor: pointer;
     }
@@ -39,7 +71,6 @@ http://www.templatemo.com/tm-416-xenon
 </head>
 
 <body>
-
     <nav class="site-header sticky-top py-1">
       <div class="container d-flex flex-column flex-md-row justify-content-between">
         <a class="py-2 d-none d-md-inline-block" href="#">Home</a>
@@ -80,7 +111,7 @@ http://www.templatemo.com/tm-416-xenon
             </div>
             <div style="text-align:center">
                 <span class="apply-button" id="neural_apply">
-                <img  style="margin-bottom: 20px;" src="http://res.cloudinary.com/demo/image/upload/w_0.75/merge_btn.png" >
+                <img  style="margin-top: 20px;" src="http://res.cloudinary.com/demo/image/upload/w_0.75/merge_btn.png" >
                 </span>
             </div>
         </div>
@@ -89,17 +120,13 @@ http://www.templatemo.com/tm-416-xenon
       <div class="bg-primary mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
         <div class="my-3 p-3">
           <h2 class="display-5">Generated Image</h2>
-          <!-- <div id="map"></div>  
-          <div id="pano"></div>
-          <img src="https://maps.googleapis.com/maps/api/streetview?location=211_S_Laflin_St&size=900x300&key=AIzaSyC2bd3qlr8st5twYYuG2Xj1yer4cSQzYFw">
-          <div> -->
             <div>
                 <span style="display:inline-block;vertical-align:top;">
-                <a id="imagelink" href="http://res.cloudinary.com/demo/image/upload/art_here.jpg" target ="_blank" data-url-template3="http://res.cloudinary.com/demo/image/upload/l_text:Arial_80:Buckets,e_style_transfer,l_#art_image#/#use-img#.jpg">
-                <img id="testpic" src="http://res.cloudinary.com/demo/image/upload/w_550,h_300,c_fit/art_here.jpg" alt="your generated neural art" title="your generated neural art"  data-url-template="http://res.cloudinary.com/demo/image/upload/e_style_transfer,l_#art_image#/#use-img#.jpg" />
+                <a id="imagelink" href="https://maps.googleapis.com/maps/api/streetview?location=41.403609,2.174448&size=456x456&key=AIzaSyC2bd3qlr8st5twYYuG2Xj1yer4cSQzYFw" target ="_blank" data-url-template3="http://res.cloudinary.com/demo/image/upload/l_text:Arial_80:Buckets,e_style_transfer,l_#art_image#/#use-img#.jpg">
+                <img id="testpic" src="https://maps.googleapis.com/maps/api/streetview?location=41.403609,2.174448&size=456x456&key=AIzaSyC2bd3qlr8st5twYYuG2Xj1yer4cSQzYFw" alt="your generated neural art" title="your generated neural art"  data-url-template="http://res.cloudinary.com/demo/image/upload/e_style_transfer,l_#art_image#/#use-img#.jpg" />
                 </a>
                 <div align="center" class="div_url" style="font-size: 60%;">
-                <a id="cloudurl" href="http://res.cloudinary.com/demo/image/upload/art_here.jpg" target="_blank" data-url-templated="http://res.cloudinary.com/demo/image/upload/l_text:Arial_80:Buckets,e_style_transfer,l_#art_image#/#use-img#.jpg"><span id="c-url">http://res.cloudinary.com/demo/image/upload/art_here.jpg</span></a>
+                <a id="cloudurl" href="https://maps.googleapis.com/maps/api/streetview?location=41.403609,2.174448&size=456x456&key=AIzaSyC2bd3qlr8st5twYYuG2Xj1yer4cSQzYFw" target="_blank" data-url-templated="http://res.cloudinary.com/demo/image/upload/l_text:Arial_80:Buckets,e_style_transfer,l_#art_image#/#use-img#.jpg"><span id="c-url">https://maps.googleapis.com/maps/api/streetview?location=41.403609,2.174448&size=456x456&key=AIzaSyC2bd3qlr8st5twYYuG2Xj1yer4cSQzYFw</span></a>
                 <p>
                 </div>
                 </span>
@@ -115,49 +142,34 @@ http://www.templatemo.com/tm-416-xenon
 <!--untouched code lol-->
 
     <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
-        <div class="bg-primary mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
-            <div class="my-3 py-3">
-              <h2 class="display-5">Another headline</h2>
-              <p class="lead">And an even wittier subheading.</p>
+      <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 p-3">
+          <h2 class="display-5">Another headline</h2>
+          <p class="lead">And an even wittier subheading.</p>
+        </div>
+      </div>
+      <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-3 py-3">
+          <h2 class="display-5">Another headline</h2>
+          <p class="lead">And an even wittier subheading.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
+            <div class="bg-primary mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+                <div class="my-3 py-3">
+                  <h2 class="display-5">Another headline</h2>
+                  <p class="lead">And an even wittier subheading.</p>
+                </div>
             </div>
+            <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+                <div class="my-3 p-3">
+                <h2 class="display-5">Another headline</h2>
+                <p class="lead">And an even wittier subheading.</p>
+            </div>
+          </div>
         </div>
-        <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-            <div class="my-3 p-3">
-            <h2 class="display-5">Another headline</h2>
-            <p class="lead">And an even wittier subheading.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
-      <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-        <div class="my-3 p-3">
-          <h2 class="display-5">Another headline</h2>
-          <p class="lead">And an even wittier subheading.</p>
-        </div>
-      </div>
-      <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-        <div class="my-3 py-3">
-          <h2 class="display-5">Another headline</h2>
-          <p class="lead">And an even wittier subheading.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="d-md-flex flex-md-equal w-100 my-md-3 pl-md-3">
-      <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-        <div class="my-3 p-3">
-          <h2 class="display-5">Another headline</h2>
-          <p class="lead">And an even wittier subheading.</p>
-        </div>
-      </div>
-      <div class="bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-        <div class="my-3 py-3">
-          <h2 class="display-5">Another headline</h2>
-          <p class="lead">And an even wittier subheading.</p>
-        </div>
-      </div>
-    </div>
 
 
 <!--Footer Information-->
