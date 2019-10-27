@@ -1,0 +1,243 @@
+
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Oct 26 18:13:53 2019
+
+@author: Bahar
+"""
+import numpy as np
+import pandas as pd
+from keras.models import Sequential
+from keras.layers import Dense
+from keras.layers import Dropout
+from keras.layers import LSTM
+from keras.utils import np_utils
+
+from keras.preprocessing.sequence import pad_sequences
+from keras.layers import Embedding, LSTM, Dense, Dropout
+from keras.preprocessing.text import Tokenizer
+from keras.callbacks import EarlyStopping
+from keras.models import Sequential
+import keras.utils as ku
+import csv
+
+
+# =============================================================================
+# import csv
+# csv_file = 'C:/Data/DareMighty/my_new_dataset.csv'
+# txt_file = 'C:/Data/DareMighty/Lease_Comp_Samples_m.txt'
+# with open(txt_file, "w") as my_output_file:
+#     with open(csv_file, "r") as my_input_file:
+#         [ my_output_file.write(" ".join(row)+'\n') for row in csv.reader(my_input_file)]
+#     my_output_file.close()
+# =============================================================================
+   
+#data1 = pd.read_csv('C:/Data/DareMighty/Lease_Comp_Samples_x.csv', encoding = "ISO-8859-1")
+#data.drop_duplicates(subset ="Bldg Type", keep = False, inplace = True)
+# =============================================================================
+# features=data.columns
+# for i in features:
+# #    is_duplicate = data.loc[:,i].apply(pd.Series.duplicated, axis=1)
+#     is_duplicate=pd.Series(data.loc[:,i].duplicated())
+#     data.loc[:,i]=data.where(~is_duplicate, 0)
+# =============================================================================
+# =============================================================================
+# import glob
+# import errno
+# import csv
+# import re
+# import numpy as np
+# import os
+# import seaborn as sns
+# import matplotlib.pyplot as plt
+# from matplotlib.pyplot import figure, show
+#
+# N= 8
+# Dim= N*N
+# array1= []
+# array2= np.zeros(Dim)
+# path_X = 'C:/Data/DareMighty/Lease_Comp_Samples.csv'
+#
+# files = glob.glob(path_X)
+# for name in files:
+#     try:
+#         with open(name) as csv_file:
+#             csv_reader = csv.reader(csv_file, delimiter=',')
+#             for column in csv_reader:
+#                 columns= column[0].replace("'", "")
+#                 wordList = list(map(int, re.sub("[^\d]", " ",  columns).split()))          
+#                 while (len(wordList)>= (Dim)):
+#                     for i in range(Dim):
+#                         array1.append(wordList[i])
+#                     del wordList[0]
+#                     array1= np.reshape(array1, (N,N))
+#                     array1= array1.astype(np.uint8)
+#                     globals()[os.path.splitext(base)[0]+'_X'].append(array1)
+#                     globals()[os.path.splitext(base)[0]+'_Y'].append(column[1])
+#                     array1= []
+#             globals()[os.path.splitext(base)[0]+'_X']= np.array(globals()[os.path.splitext(base)[0]+'_X'])
+#             globals()[os.path.splitext(base)[0]+'_Y']= np.array(globals()[os.path.splitext(base)[0]+'_Y'])
+#     except IOError as exc:
+#         if exc.errno != errno.EISDIR:
+#             raise
+#
+# =============================================================================
+# =============================================================================
+# txt_file = 'C:/Data/DareMighty/Lease_Comp_Samples.txt'
+# text=(open(txt_file).read())
+# text=text.lower()
+#
+# characters = sorted(list(set(text)))
+# n_to_char = {n:char for n, char in enumerate(characters)}
+# char_to_n = {char:n for n, char in enumerate(characters)}
+#
+# X = []
+# Y = []
+# length = len(text)
+# seq_length = 100
+# for i in range(0, length-seq_length, 1):    
+#     sequence = text[i:i + seq_length]
+#     label =text[i + seq_length]
+#     X.append([char_to_n[char] for char in sequence])
+#     Y.append(char_to_n[label])
+#
+# X_modified = np.reshape(X, (len(X), seq_length, 1))
+# X_modified = X_modified / float(len(characters))
+# Y_modified = np_utils.to_categorical(Y)
+#
+# model = Sequential()
+# model.add(LSTM(10, input_shape=(X_modified.shape[1], X_modified.shape[2]), return_sequences=True))
+# model.add(Dropout(0.2))
+# model.add(LSTM(10))
+# model.add(Dropout(0.2))
+# model.add(Dense(Y_modified.shape[1], activation='softmax'))
+# model.compile(loss='categorical_crossentropy', optimizer='adam')
+# model.fit(X_modified, Y_modified, epochs=10, batch_size=20, verbose=2)
+#
+# string_mapped = X[99]
+#
+# for i in range(seq_length):
+#     x = np.reshape(string_mapped,(1,len(string_mapped), 1))
+#     x = x / float(len(characters))
+#     pred_index = np.argmax(model.predict(x, verbose=0))
+#     seq = [n_to_char[value] for value in string_mapped]
+#     string_mapped.append(pred_index)
+#     string_mapped = string_mapped[1:len(string_mapped)]
+# =============================================================================
+# =============================================================================
+# my_list=[]
+# features=data.columns
+# for i in features:
+#     for n in range(data.shape[0]):
+#         if data.loc[n,i]!= 0 and data.loc[n,i]!= 'NAN' and data.loc[n,i]!= 'nan':
+#             string= i + ' is ' +str(data.loc[n,i])
+#             my_list.append(string)
+# =============================================================================
+           
+# =============================================================================
+# with open('Lease_Comp_Samples.txt', 'w') as f:
+#     for item in my_list:
+#         f.write("%s\n" % item)
+# =============================================================================
+#text=list(csv.reader(open('C:/Data/DareMighty/Alice_In_Wonderland.txt', 'r'), delimiter='\t'))
+#txt_file = 'C:/Data/DareMighty/Alice_In_Wonderland.txt'
+#text=csv.reader(open('C:/Data/DareMighty/Alice_In_Wonderland.txt', 'r'), delimiter='\t')
+#
+#text = text.encode("utf8").decode("ascii",'ignore')
+
+#
+#txt_file = 'C:/Data/DareMighty/Alice_In_Wonderland.txt'
+#csv_file = 'C:/Data/DareMighty/Lease_Comp_Samples_alic.csv'
+
+# use 'with' if the program isn't going to immediately terminate
+# so you don't leave files open
+# the 'b' is necessary on Windows
+# it prevents \x1a, Ctrl-z, from ending the stream prematurely
+# and also stops Python converting to / from different line terminators
+# On other platforms, it has no effect
+#in_txt = csv.reader(open(txt_file, "rb"), delimiter = '\t')
+#out_csv = csv.writer(open(csv_file, 'wb'))
+#
+#out_csv.writerows(in_txt)
+# =============================================================================
+# def clean_text(txt):
+#     txt = "".join(v for v in txt if v not in string.punctuation).lower()
+#     txt = txt.encode("utf8").decode("ascii",'ignore')
+#     return txt
+#
+# corpus = [clean_text(text) for x in all_headlines]
+# corpus[:10]
+# =============================================================================
+   
+#df = pd.DataFrame(my_list)
+#df.to_csv('my_new_dataset.csv', index=False)
+tokenizer = Tokenizer()
+
+def get_sequence_of_tokens(corpus):
+    ## tokenization
+    tokenizer.fit_on_texts(corpus)
+    total_words = len(tokenizer.word_index) + 1
+   
+    ## convert data to sequence of tokens
+    input_sequences = []
+    for line in corpus:
+        token_list = tokenizer.texts_to_sequences([line])[0]
+        for i in range(1, len(token_list)):
+            n_gram_sequence = token_list[:i+1]
+            input_sequences.append(n_gram_sequence)
+    return input_sequences, total_words
+
+#inp_sequences, total_words = get_sequence_of_tokens(list3)
+
+
+def generate_padded_sequences(input_sequences):
+    max_sequence_len = max([len(x) for x in input_sequences])
+    input_sequences = np.array(pad_sequences(input_sequences, maxlen=max_sequence_len, padding='pre'))
+   
+    predictors, label = input_sequences[:,:-1],input_sequences[:,-1]
+    label = ku.to_categorical(label, num_classes= total_words)
+    return predictors, label, max_sequence_len
+
+#predictors, label, max_sequence_len = generate_padded_sequences(inp_sequences)
+
+def create_model(max_sequence_len, total_words):
+    input_len = max_sequence_len - 1
+    model = Sequential()
+    model.add(Embedding(total_words, 10, input_length=input_len))
+    model.add(LSTM(100))
+    model.add(Dropout(0.1))
+    model.add(Dense(total_words, activation='softmax'))
+    model.compile(loss='categorical_crossentropy', optimizer='adam')
+    return model
+
+#model = create_model(max_sequence_len, total_words)
+
+
+def generate_text(seed_text, next_words, model, max_sequence_len):
+    for _ in range(next_words):
+        token_list = tokenizer.texts_to_sequences([seed_text])[0]
+        token_list = pad_sequences([token_list], maxlen=max_sequence_len-1, padding='pre')
+        predicted = model.predict_classes(token_list, verbose=0)
+       
+        output_word = ""
+        for word,index in tokenizer.word_index.items():
+            if index == predicted:
+                output_word = word
+                break
+        seed_text += " "+output_word
+    return seed_text.title()
+
+model.fit(predictors, label, epochs=100, verbose=5)
+generate_text('Tenant Ardmore Roderick', 10, model, max_sequence_len)
+
+# =============================================================================
+# =============================================================================
+# import pandas as pd    
+# df = pd.DataFrame(text)
+# df.to_csv('filename.csv', index=False)
+# =============================================================================
+# =============================================================================
+# =============================================================================
+# for i in range(len(list2)):
+#     list2[i]=[x.lower() for x in list2[i]]
+# =============================================================================
