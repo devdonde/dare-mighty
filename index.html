@@ -196,6 +196,15 @@ http://www.templatemo.com/tm-416-xenon
     <!--Scripts-->
     <!--ik this shouldn't go here but whoops 2.4-->
     <script>
+      var input = document.getElementById("Search");
+      input.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+         event.preventDefault();
+         addressFunction()
+        }
+      });
+      </script>
+    <script>
       function addressFunction() {
         var x = document.getElementByName("Search").value;
         document.getElementById("property").innerHTML = x;
