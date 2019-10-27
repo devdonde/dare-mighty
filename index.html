@@ -239,7 +239,7 @@ function updateResult(result) {
     var widget_id = result["public_id"];
     A =   widget_id;
     if (!B) {
-      B = "jmss9xhzpc90mdfu0tas";
+      B = String($newMapsUrl);
       $('#art1').addClass('active');
     }
 
@@ -300,7 +300,7 @@ function updateResult(result) {
       A = "art-here"
     }
     if (!B) {
-      B = "jmss9xhzpc90mdfu0tas"
+      B = String($newMapsUrl)
     }
 
     var newUrl = $display.replace('#use-img#', A).replace('#art_image#', B);
