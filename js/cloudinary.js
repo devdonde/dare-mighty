@@ -32,7 +32,7 @@ const update = () => {
         // exp.test(b.D.toLowerCase())
       // );
     // });
-  }
+  // }
   // Remove previous results and add the new ones
   // resultContainer.innerHTML = "";
   // addItems(dataSet);
