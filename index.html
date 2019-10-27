@@ -42,7 +42,7 @@ http://www.templatemo.com/tm-416-xenon
 
     <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
       <div class="col-md-5 p-lg-5 mx-auto my-5">
-        <h1 class="display-4 font-weight-normal">Property Name Placeholder</h1>
+        <h1 id="property" class="display-4 font-weight-normal">Property Name Placeholder</h1>
         <h2 class="lead font-weight-normal">Property Address Placeholder</h2>
         <p class="font-weight-normal" style="min-width: 30%">Property Narrative Placeholder. 
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -173,7 +173,8 @@ http://www.templatemo.com/tm-416-xenon
     <!--ik this shouldn't go here but whoops 2.4-->
     <script>
       function addressFunction() {
-        document.getElementByName("Search").placeholder = "idk";
+        var x = document.getElementByName("Search").value;
+        document.getElementById("property").innerHTML = x;
       }
       </script>
       <script>
