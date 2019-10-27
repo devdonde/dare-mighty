@@ -69,13 +69,70 @@ http://www.templatemo.com/tm-416-xenon
 </head>
 
 <script>
-$(document).ready(function(){
-    $("form").submit(function(){
-        var underscored=document.getElementById("search-bar").replace(/ /g,"_")
-        alert($underscored);
-        // console.log($(Address));
-    });
+let resultContainer, textField;
+
+document.addEventListener('DOMContentLoaded', () => {
+  resultContainer = document.getElementById('search-result');
+  textField = document.getElementById('textfield');
+  addItems(data.books);
+  
+  textField.addEventListener('change', () => {
+    setTimeout(update(), 100);
+  });
 });
+
+// Runs when uppdating search
+const update = () => {
+  let value = textField.value.toLowerCase;
+  let exp = new RegExp(textField.value.toLowerCase());
+  let dataSet;
+  if (value === "") {
+    // Add all objects to dataSet
+    dataSet = data.books;
+  } else {
+    // Filter out objects that matches search query
+    dataSet = data.books.filter(b => {
+      return (
+        exp.test(b.name.toLowerCase()) || 
+        exp.test(b.category.toLowerCase()) || 
+        exp.test(b.price)
+      );
+    });
+  }
+  // Remove previous results and add the new ones
+  resultContainer.innerHTML = "";
+  addItems(dataSet);
+}
+
+const addItems = data => {
+  let container = document.createElement('div');
+  container.classList.add('list-item');
+  // Creates column headers
+  createTextElement('div', 'Title', container);
+  createTextElement('div', 'Category', container);
+  createTextElement('div', 'Price', container);
+  resultContainer.appendChild(container);
+  // Loops through the provided objects
+  for (let i = 0; i < data.length; i++) {
+    let container = document.createElement('div');
+    container.classList.add('list-item');
+    // Adds values for every row
+    createTextElement('div', data[i].name, container);
+    createTextElement('div', data[i].category, container);
+    createTextElement('div', data[i].price + ' kr', container);
+    resultContainer.appendChild(container);
+  }
+}
+
+// Function to create, and append, elements containing text
+const createTextElement = (elem, text, appendTo) => {
+  let container = document.createElement(elem);
+  let textNode = document.createTextNode(text);
+  container.appendChild(textNode);
+  appendTo.appendChild(container);
+}
+
+var data = require('propertycsv/json');
 </script>
 
 
@@ -84,9 +141,15 @@ $(document).ready(function(){
       <div class="container d-flex flex-column flex-md-row justify-content-between">
         <a class="py-2 d-none d-md-inline-block" href="#">Home</a>
         <a class="py-2 d-none d-md-inline-block" href="#">Associate Portal</a>
-        <form id="search-bar" class="search-bar" action="">
-            <input type="text" name="Address" placeholder="Enter property information...">
-        </form>
+        <!-- <form class="search-bar" action="">
+            <input id="search-bar" type="text" name="Address" placeholder="Enter property information...">
+            <p><span id='display'></span></p>
+        </form> -->
+        <div id="search-form">
+                <input id="textfield" class="form-control" type="text" />
+                <button class="btn btn-success" onclick="update()">Search</button>
+              </div>
+              <div id="search-result" />
         <a class="py-2 d-none d-md-inline-block" href="#">Prospective Clients</a>
         <a class="py-2 d-none d-md-inline-block" href="#">Contact</a>
       </div>
