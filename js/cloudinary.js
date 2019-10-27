@@ -25,7 +25,7 @@ const update = () => {
         // exp.test(b.A.toLowerCase()) || 
         // exp.test(b.B.toLowerCase()) || 
         // exp.test(b.C) ||
-        exp.test(b.D)
+        exp.test(b.D.toLowerCase())
       );
     });
   }
