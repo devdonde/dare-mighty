@@ -1,17 +1,5 @@
 let resultContainer, textField;
 
-function getPropertyByAddress(D) {
-  return data.filter(
-    function(data) {
-      return data.D == D
-    }
-  );
-};
-
-var found = getPropertyByAddress('1 Astellas Way');
-
-document.getElementById('output').innerHTML = found[0].name;
-
 document.addEventListener('DOMContentLoaded', () => {
   resultContainer = document.getElementById('search-result');
   textField = document.getElementById('textfield');
@@ -29,7 +17,7 @@ const update = () => {
   document.getElementById("property_name").innerHTML = String(textField.value);
   document.getElementById("property_address").innerHTML = JSON.stringify(data.D);
   document.getElementById("property_narrative").innerHTML = JSON.stringify(data.C);
-};
+}
 
 var data = [
     {
