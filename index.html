@@ -296,6 +296,13 @@ function updateResult(result) {
 
     var $imglink = $('#imagelink');
     var $img = $('#testpic');
+    
+    // Create Google Map API search string
+    var value = document.getElementById(textfield).textField.value.toLowerCase;
+    var underscored = String(document.getElementById(textfield).textField.value).replace(/ /g,"_");
+    var $mapsUrl = "https://maps.googleapis.com/maps/api/streetview?location=#underscored#&size=900x300&key=AIzaSyC2bd3qlr8st5twYYuG2Xj1yer4cSQzYFw"
+    var $newMapsUrl = $mapsUrl.replace('#underscored#', underscored);
+    console.log($newMapsUrl);
 
     if (A == "custom") {
       return;
