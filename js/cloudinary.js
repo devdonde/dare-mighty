@@ -3,6 +3,9 @@ let resultContainer, textField;
 document.addEventListener('DOMContentLoaded', () => {
   resultContainer = document.getElementById('search-result');
   textField = document.getElementById('textfield');
+  addItems(data.A);
+  addItems(data.B);
+  addItems(data.C);
   addItems(data.D);
   
   textField.addEventListener('change', () => {
