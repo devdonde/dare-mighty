@@ -1,5 +1,5 @@
 let resultContainer, textField;
-var data = require('./propertycsv.json');
+// var data = require('./js/propertycsv.json');
 
 document.addEventListener('DOMContentLoaded', () => {
   resultContainer = document.getElementById('search-result');
@@ -62,99 +62,99 @@ const createTextElement = (elem, text, appendTo) => {
   appendTo.appendChild(container);
 }
 
-const data = require('./propertycsv.json');
+// const data = require('./propertycsv.json');
 // List of books
-// const data = {
-//   books: [
-//     {
-//       id: 0,
-//       name: 'Some name',
-//       category: 'Horror',
-//       price: 120
-//     },
-//     {
-//       id: 1,
-//       name: 'Name some',
-//       category: 'Comedy',
-//       price: 100
-//     },
-//     {
-//       id: 2,
-//       name: 'What\'s up?',
-//       category: 'Biography',
-//       price: 110
-//     },
-//     {
-//       id: 3,
-//       name: 'Need help?',
-//       category: 'Comedy',
-//       price: 90
-//     },
-//     {
-//       id: 4,
-//       name: 'Don\'t ask me!',
-//       category: 'Drama',
-//       price: 100
-//     },
-//     {
-//       id: 5,
-//       name: 'Come on!',
-//       category: 'Thriller',
-//       price: 70
-//     },
-//     {
-//       id: 6,
-//       name: 'An idiot like me',
-//       category: 'Biography',
-//       price: 100
-//     },
-//     {
-//       id: 7,
-//       name: 'All about that base',
-//       category: 'Thriller',
-//       price: 120
-//     },
-//     {
-//       id: 8,
-//       name: 'Cash me outside',
-//       category: 'Comedy',
-//       price: 100
-//     },
-//     {
-//       id: 9,
-//       name: 'So fluffy I\'m gonna die!',
-//       category: 'Biography',
-//       price: 100
-//     },
-//     {
-//       id: 10,
-//       name: 'Quarl - A yellow story',
-//       category: 'Biography',
-//       price: 313
-//     },
-//     {
-//       id: 11,
-//       name: 'Let it go!',
-//       category: 'Horror',
-//       price: 170
-//     },
-//     {
-//       id: 12,
-//       name: 'Y u gotta b so rude?',
-//       category: 'Drama',
-//       price: 10
-//     },
-//     {
-//       id: 13,
-//       name: 'Nourly there',
-//       category: 'Comedy',
-//       price: 9001
-//     },
-//     {
-//       id: 14,
-//       name: 'SARA - Frame that work',
-//       category: 'Technology',
-//       price: 230
-//     }
-//   ]
-// };
+const data = {
+  books: [
+    {
+      id: 0,
+      name: 'Some name',
+      category: 'Horror',
+      price: 120
+    },
+    {
+      id: 1,
+      name: 'Name some',
+      category: 'Comedy',
+      price: 100
+    },
+    {
+      id: 2,
+      name: 'What\'s up?',
+      category: 'Biography',
+      price: 110
+    },
+    {
+      id: 3,
+      name: 'Need help?',
+      category: 'Comedy',
+      price: 90
+    },
+    {
+      id: 4,
+      name: 'Don\'t ask me!',
+      category: 'Drama',
+      price: 100
+    },
+    {
+      id: 5,
+      name: 'Come on!',
+      category: 'Thriller',
+      price: 70
+    },
+    {
+      id: 6,
+      name: 'An idiot like me',
+      category: 'Biography',
+      price: 100
+    },
+    {
+      id: 7,
+      name: 'All about that base',
+      category: 'Thriller',
+      price: 120
+    },
+    {
+      id: 8,
+      name: 'Cash me outside',
+      category: 'Comedy',
+      price: 100
+    },
+    {
+      id: 9,
+      name: 'So fluffy I\'m gonna die!',
+      category: 'Biography',
+      price: 100
+    },
+    {
+      id: 10,
+      name: 'Quarl - A yellow story',
+      category: 'Biography',
+      price: 313
+    },
+    {
+      id: 11,
+      name: 'Let it go!',
+      category: 'Horror',
+      price: 170
+    },
+    {
+      id: 12,
+      name: 'Y u gotta b so rude?',
+      category: 'Drama',
+      price: 10
+    },
+    {
+      id: 13,
+      name: 'Nourly there',
+      category: 'Comedy',
+      price: 9001
+    },
+    {
+      id: 14,
+      name: 'SARA - Frame that work',
+      category: 'Technology',
+      price: 230
+    }
+  ]
+};
