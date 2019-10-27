@@ -8,10 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-function getPropertyByAddress(B) {
+function getPropertyByAddress(Address) {
   return data.filter(
     function(data) {
-      return data.B == B
+      return data.Address == Address
     }
   );
 }
@@ -25,8 +25,12 @@ const update = () => {
   // Update the placeholders
   document.getElementById("property_address").innerHTML = String(textField.value);
   let property_address = String(textField.value);
-  document.getElementById("property_name").innerHTML = JSON.stringify(getPropertyByAddress(property_address));
-  document.getElementById("property_narrative").innerHTML = JSON.stringify(data.C);
+  var found = getPropertyByAddress(property_address)
+  console.log(property_address);
+  console.log(found);
+  document.getElementById("property_name").innerHTML = found[0].PropertyType;
+  // document.getElementById("property_narrative").innerHTML = JSON.stringify(data.C);
+  
   // Create Google Map API search string
   let underscored = String(textField.value).replace(/ /g,"_");
   var $mapsUrl = "https://maps.googleapis.com/maps/api/streetview?location=#underscored#&size=900x300&key=AIzaSyC2bd3qlr8st5twYYuG2Xj1yer4cSQzYFw"
