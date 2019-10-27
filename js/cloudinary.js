@@ -23,7 +23,9 @@ const update = () => {
   var $mapsUrl = "https://maps.googleapis.com/maps/api/streetview?location=#underscored#&size=900x300&key=AIzaSyC2bd3qlr8st5twYYuG2Xj1yer4cSQzYFw"
   var $newMapsUrl = $mapsUrl.replace('#underscored#', underscored);
   console.log($newMapsUrl);
-  document.getElementById("testpic").innerHTML = String($newMapsUrl);
+  document.getElementById("testpic").setAttribute("src", String($newMapsUrl));
+  // document.getElementById("testpic").innerHTML = String($newMapsUrl);
+  // document.getElementById("testpic").innerHTML = String($newMapsUrl);
 }
 
 var data = [
