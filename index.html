@@ -76,7 +76,7 @@ http://www.templatemo.com/tm-416-xenon
         <div id="search-form">
                 <input id="textfield" class="form-control" type="text" placeholder="Enter address information..." />
         </div>
-        <button class="btn btn-success" onclick="update()">Search</button>
+        <button id="urlSelect" class="btn btn-success" onclick="update()">Search</button>
       </div>
     </nav>
 
@@ -199,6 +199,52 @@ http://www.templatemo.com/tm-416-xenon
 <!--Scripts-->
     <!-- Javascript cloudinary-->
     <script type="text/javascript">
+// start
+const cloudName = 'dmtulta';
+const unsignedUploadPreset = 'us_dmt';
+
+var urlSelect = document.getElementById("urlSelect");
+
+urlSelect.addEventListener("click", function(e) {
+  uploadFile('https://maps.googleapis.com/maps/api/streetview?location=1_E_Chicago_Ave&size=900x300&key=AIzaSyC2bd3qlr8st5twYYuG2Xj1yer4cSQzYFw')
+  e.preventDefault(); // prevent navigation to "#"
+}, false);
+
+// *********** Upload file to Cloudinary ******************** //
+function uploadFile(file) {
+  var url = `https://api.cloudinary.com/v1_1/${cloudName}/upload`;
+  var xhr = new XMLHttpRequest();
+  var fd = new FormData();
+  xhr.open('POST', url, true);
+  xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+
+  // Reset the upload progress bar
+   document.getElementById('progress').style.width = 0;
+
+  xhr.onreadystatechange = function(e) {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      // File uploaded successfully
+      var response = JSON.parse(xhr.responseText);
+      // https://res.cloudinary.com/cloudName/image/upload/v1483481128/public_id.jpg
+      var url = response.secure_url;
+      // Create a thumbnail of the uploaded image, with 150px width
+      var tokens = url.split('/');
+      tokens.splice(-2, 0, 'w_150,c_scale');
+      var img = new Image(); // HTML5 Constructor
+      img.src = tokens.join('/');
+      img.alt = response.public_id;
+      document.getElementById('gallery').appendChild(img);
+    }
+  };
+
+  fd.append('upload_preset', unsignedUploadPreset);
+  fd.append('tags', 'browser_upload'); // Optional - add tag for image admin in Cloudinary
+  fd.append('file', file);
+  xhr.send(fd);
+}
+
+
+// stop
 var A = "custom";
 var B;
 
@@ -214,11 +260,11 @@ function updateResult(result) {
     var widget_id = result["public_id"];
 
     // // Create Google Map API search string
-    // var value = document.getElementById(textfield).textField.value.toLowerCase();
-    // var underscored = String(document.getElementById(textfield).textField.value).replace(/ /g,"_");
-    // var $mapsUrl = "https://maps.googleapis.com/maps/api/streetview?location=#underscored#&size=900x300&key=AIzaSyC2bd3qlr8st5twYYuG2Xj1yer4cSQzYFw"
-    // var $newMapsUrl = $mapsUrl.replace('#underscored#', underscored);
-    // console.log($newMapsUrl);
+    var value = document.getElementById(textfield).textField.value.toLowerCase();
+    var underscored = String(document.getElementById(textfield).textField.value).replace(/ /g,"_");
+    var $mapsUrl = "https://maps.googleapis.com/maps/api/streetview?location=#underscored#&size=900x300&key=AIzaSyC2bd3qlr8st5twYYuG2Xj1yer4cSQzYFw"
+    var $newMapsUrl = $mapsUrl.replace('#underscored#', underscored);
+    console.log($newMapsUrl);
 
     A =   widget_id;
     if (!B) {
