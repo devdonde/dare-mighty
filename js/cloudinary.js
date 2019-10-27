@@ -27,9 +27,10 @@ const update = () => {
         exp.test(b.C) ||
         exp.test(b.D.toLowerCase())
     );
-  })
-  };
-  document.getElementById("property_narrative").innerHTML = JSON.stringify(data.C);
+  }))
+  document.getElementById("property_narrative").innerHTML = JSON.stringify(data.C);  
+}
+  
   
   // if (value === "") {
     // Add all objects to dataSet
