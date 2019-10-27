@@ -1,40 +1,22 @@
 let resultContainer, textField;
 
-// document.addEventListener('DOMContentLoaded', () => {
-//   resultContainer = document.getElementById('search-result');
-//   textField = document.getElementById('textfield');
-//   addItems(data.A);
-//   addItems(data.B);
-//   addItems(data.C);
-//   addItems(data.D);
-  
-//   textField.addEventListener('change', () => {
-//     setTimeout(update(), 100);
-//   });
-// });
-
-function getPropertyByAddress(address) {
-  let address = textField.value.toLowerCase;
-  return data.filter(
-    function(data){ 
-      return data.property == property 
-    }
-  );
-}
-
-var found = getPropertyByAddress('DZ');
-document.getElementById("property_name").innerHTML = found[0].name;
-// document.getElementById("property_name").innerHTML = String(textField.value);
-// document.getElementById("property_address").innerHTML = JSON.stringify(data.D);
-// document.getElementById("property_narrative").innerHTML = JSON.stringify(data.C);
-
+document.addEventListener('DOMContentLoaded', () => {
+  resultContainer = document.getElementById('search-result');
+  textField = document.getElementById('textfield');
+  textField.addEventListener('change', () => {
+    setTimeout(update(), 100);
+  });
+});
 
 // Runs when updating search
-// const update = () => {
-//   let value = textField.value.toLowerCase;
-//   let underscored = textField.value.replace(/ /g,"_");
-//   let exp = new RegExp(textField.value.toLowerCase());
-//   let dataSet;
+const update = () => {
+  let value = textField.value.toLowerCase;
+  let underscored = textField.value.replace(/ /g,"_");
+  let exp = new RegExp(textField.value.toLowerCase());
+  let dataSet;
+  document.getElementById("property_name").innerHTML = String(textField.value);
+  document.getElementById("property_address").innerHTML = JSON.stringify(data.D);
+  document.getElementById("property_narrative").innerHTML = JSON.stringify(data.C);
 
 var data = [
     {
