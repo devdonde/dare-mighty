@@ -22,9 +22,10 @@ const update = () => {
     // Filter out objects that matches search query
     dataSet = data.D.filter(b => {
       return (
-        exp.test(b.A.toLowerCase()) || 
-        exp.test(b.B.toLowerCase()) || 
-        exp.test(b.C)
+        // exp.test(b.A.toLowerCase()) || 
+        // exp.test(b.B.toLowerCase()) || 
+        // exp.test(b.C) ||
+        exp.test(b.D)
       );
     });
   }
@@ -37,9 +38,9 @@ const addItems = data => {
   let container = document.createElement('div');
   container.classList.add('list-item');
   // Creates column headers
-  createTextElement('div', 'A', container);
-  createTextElement('div', 'B', container);
-  createTextElement('div', 'C', container);
+  // createTextElement('div', 'A', container);
+  // createTextElement('div', 'B', container);
+  // createTextElement('div', 'C', container);
   createTextElement('div', 'D', container);
   resultContainer.appendChild(container);
   // Loops through the provided objects
@@ -47,9 +48,9 @@ const addItems = data => {
     let container = document.createElement('div');
     container.classList.add('list-item');
     // Adds values for every row
-    createTextElement('div', data[i].A, container);
-    createTextElement('div', data[i].B, container);
-    createTextElement('div', data[i].C + ' kr', container);
+    // createTextElement('div', data[i].A, container);
+    // createTextElement('div', data[i].B, container);
+    // createTextElement('div', data[i].C + ' kr', container);
     createTextElement('div', data[i].D, container);
     resultContainer.appendChild(container);
   }
